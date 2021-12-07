@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://mantielero.github.io/occt-site/"
 title = "occt.nim"
 publishdir = "./docs"
 
