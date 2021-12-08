@@ -14,6 +14,41 @@
     
     
     <item>
+      <title>Docs: Gc</title>
+      <link>https://mantielero.github.io/occt-site/docs/reference/gc/</link>
+      <pubDate>Wed, 08 Dec 2021 16:37:36 +0100</pubDate>
+      
+      <guid>https://mantielero.github.io/occt-site/docs/reference/gc/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Open Cascade documentation: &lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/package_gc.html&#34;&gt;gc&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GC_MakeArcOfCircle&lt;/li&gt;
+&lt;li&gt;GC_MakeArcOfEllipse&lt;/li&gt;
+&lt;li&gt;GC_MakeArcOfHyperbola&lt;/li&gt;
+&lt;li&gt;GC_MakeArcOfParabola&lt;/li&gt;
+&lt;li&gt;GC_MakeCircle&lt;/li&gt;
+&lt;li&gt;GC_MakeConicalSurface&lt;/li&gt;
+&lt;li&gt;GC_MakeCylindricalSurface&lt;/li&gt;
+&lt;li&gt;GC_MakeEllipse&lt;/li&gt;
+&lt;li&gt;GC_MakeHyperbola&lt;/li&gt;
+&lt;li&gt;GC_MakeLine&lt;/li&gt;
+&lt;li&gt;GC_MakeMirror&lt;/li&gt;
+&lt;li&gt;GC_MakePlane&lt;/li&gt;
+&lt;li&gt;GC_MakeRotation&lt;/li&gt;
+&lt;li&gt;GC_MakeScale&lt;/li&gt;
+&lt;li&gt;GC_MakeSegment&lt;/li&gt;
+&lt;li&gt;GC_MakeTranslation&lt;/li&gt;
+&lt;li&gt;GC_MakeTrimmedCone&lt;/li&gt;
+&lt;li&gt;GC_MakeTrimmedCylinder&lt;/li&gt;
+&lt;li&gt;GC_Root&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Package: gp</title>
       <link>https://mantielero.github.io/occt-site/docs/reference/gp/</link>
       <pubDate>Wed, 08 Dec 2021 11:57:15 +0100</pubDate>
