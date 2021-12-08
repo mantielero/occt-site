@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.89.4" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.89.4" /><link rel="canonical" type="text/html" href="https://mantielero.github.io/occt-site/docs/reference/gp/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://mantielero.github.io/occt-site/docs/reference/gp/index.xml">
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 
 <link rel="shortcut icon" href="/occt-site/favicons/favicon.ico" >
@@ -17,40 +19,23 @@
 <link rel="icon" type="image/png" href="/occt-site/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/occt-site/favicons/android-192x192.png" sizes="192x192">
 
-<title>About Open Cascade | occt.nim</title>
+<title>Package: gp | occt.nim</title>
 
 
   
-  <meta name="description" content="OpenCascade is organized in different modules (alphabetic order):
+  <meta name="description" content="Open Cascade documentation: package: gp
+Some &ldquo;sugar&rdquo; is added for this package:
 
-ApplicationFramework
-DataExchange
-Draw
-FoundationClasses
-ModelingAlgorithms …">
-<meta property="og:title" content="About Open Cascade" />
-<meta property="og:description" content="OpenCascade is organized in different modules (alphabetic order):
- ApplicationFramework DataExchange Draw FoundationClasses ModelingAlgorithms ModelingData Visualization  Each module contain a number of toolkits (TK). For example:
- FoundationClasses  tkernel tkmath &hellip;    Each toolkit contains a number of packages as seen for tkernel.
-So OpenCascade is huge (beyond 7600 headers)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://mantielero.github.io/occt-site/docs/reference/about-open-cascade/" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2021-12-08T10:43:43+01:00" />
-<meta property="article:modified_time" content="2021-12-08T10:53:07+01:00" /><meta property="og:site_name" content="occt.nim" />
+You can mix floats and integers while defining the …">
+<meta property="og:title" content="Package: gp" />
+<meta property="og:description" content="Open Cascade bindings for Nim language" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://mantielero.github.io/occt-site/docs/reference/gp/" /><meta property="og:site_name" content="occt.nim" />
 
-<meta itemprop="name" content="About Open Cascade">
-<meta itemprop="description" content="OpenCascade is organized in different modules (alphabetic order):
- ApplicationFramework DataExchange Draw FoundationClasses ModelingAlgorithms ModelingData Visualization  Each module contain a number of toolkits (TK). For example:
- FoundationClasses  tkernel tkmath &hellip;    Each toolkit contains a number of packages as seen for tkernel.
-So OpenCascade is huge (beyond 7600 headers)."><meta itemprop="datePublished" content="2021-12-08T10:43:43+01:00" />
-<meta itemprop="dateModified" content="2021-12-08T10:53:07+01:00" />
-<meta itemprop="wordCount" content="47">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="About Open Cascade"/>
-<meta name="twitter:description" content="OpenCascade is organized in different modules (alphabetic order):
- ApplicationFramework DataExchange Draw FoundationClasses ModelingAlgorithms ModelingData Visualization  Each module contain a number of toolkits (TK). For example:
- FoundationClasses  tkernel tkmath &hellip;    Each toolkit contains a number of packages as seen for tkernel.
-So OpenCascade is huge (beyond 7600 headers)."/>
+<meta itemprop="name" content="Package: gp">
+<meta itemprop="description" content="Open Cascade bindings for Nim language"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Package: gp"/>
+<meta name="twitter:description" content="Open Cascade bindings for Nim language"/>
 
 
 
@@ -85,7 +70,7 @@ if (!doNotTrack) {
 
 
   </head>
-  <body class="td-page">
+  <body class="td-section">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -158,337 +143,111 @@ if (!doNotTrack) {
     <div class="container-fluid td-outer">
       <div class="td-main">
         <div class="row flex-xl-nowrap">
-          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-            
-<div id="td-sidebar-menu" class="td-sidebar__inner">
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-<input type="search" class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete="off">
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
-  <nav class="collapse td-sidebar-nav" id="td-section-nav">
-    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-occt-sitedocs-li">
-  <a href="/occt-site/docs/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-occt-sitedocs"><span class="">Documentation</span></a>
-  <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsoverview-li">
-  <a href="/occt-site/docs/overview/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsoverview"><span class="">Overview</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-occt-sitedocsgetting-started-li">
-  <a href="/occt-site/docs/getting-started/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsgetting-started"><span class="">Getting Started</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsgetting-startedexample-page-li">
-  <a href="/occt-site/docs/getting-started/example-page/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsgetting-startedexample-page"><span class="">Example Page</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsexamples-li">
-  <a href="/occt-site/docs/examples/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsexamples"><span class="">Examples</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsconcepts-li">
-  <a href="/occt-site/docs/concepts/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsconcepts"><span class="">Concepts</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-occt-sitedocstasks-li">
-  <a href="/occt-site/docs/tasks/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocstasks"><span class="">Core Tasks</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocstasksbeds-li">
-  <a href="/occt-site/docs/tasks/beds/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocstasksbeds"><span class="">Bed and Chair Metrics</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocstasksporridge-li">
-  <a href="/occt-site/docs/tasks/porridge/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocstasksporridge"><span class="">Porridge Assessment</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocstaskstask-li">
-  <a href="/occt-site/docs/tasks/task/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocstaskstask"><span class="">Another Task</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-occt-sitedocstasksponycopters-li">
-  <a href="/occt-site/docs/tasks/ponycopters/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocstasksponycopters"><span class="">Working with Ponycopters</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocstasksponycoptersconfiguring-ponycopters-li">
-  <a href="/occt-site/docs/tasks/ponycopters/configuring-ponycopters/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocstasksponycoptersconfiguring-ponycopters"><span class="">Configuring Ponycopters</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocstasksponycopterslaunching-ponycopters-li">
-  <a href="/occt-site/docs/tasks/ponycopters/launching-ponycopters/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocstasksponycopterslaunching-ponycopters"><span class="">Launching Ponycopters</span></a>
-</li>
-  </ul>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-occt-sitedocstutorials-li">
-  <a href="/occt-site/docs/tutorials/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocstutorials"><span class="">Tutorials</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocstutorialsmulti-bear-li">
-  <a href="/occt-site/docs/tutorials/multi-bear/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocstutorialsmulti-bear"><span class="">Multi-Bear Domicile Setup</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocstutorialstutorial2-li">
-  <a href="/occt-site/docs/tutorials/tutorial2/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocstutorialstutorial2"><span class="">Another Tutorial</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-occt-sitedocsreference-li">
-  <a href="/occt-site/docs/reference/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsreference"><span class="">Reference</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferencegp-li">
-  <a href="/occt-site/docs/reference/gp/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsreferencegp"><span class="">Package: gp</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-occt-sitedocsreferenceabout-open-cascade-li">
-  <a href="/occt-site/docs/reference/about-open-cascade/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsreferenceabout-open-cascade"><span class="td-sidebar-nav-active-item">About Open Cascade</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferenceparameter-reference-li">
-  <a href="/occt-site/docs/reference/parameter-reference/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsreferenceparameter-reference"><span class="">Parameter Reference</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-occt-sitedocsdevelopment-li">
-  <a href="/occt-site/docs/development/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsdevelopment"><span class="">Development</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsdevelopmentintroduction-li">
-  <a href="/occt-site/docs/development/introduction/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsdevelopmentintroduction"><span class="">Introduction</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocscontribution-guidelines-li">
-  <a href="/occt-site/docs/contribution-guidelines/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocscontribution-guidelines"><span class="">Contribution Guidelines</span></a>
-</li>
-  </ul>
-</li>
-    </ul>
-  </nav>
-</div>
-
-          </aside>
-          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
-            
-  
-  
-  
-  
-  
-  
-  <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-  
-    
-    
-      
-    
-    
-    
-    
-    
-    
-    
-
-    <a href="https://github.com/google/docsy-example/edit/master/content/en/docs/Reference/about-open-cascade.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-    <a href="https://github.com/google/docsy-example/new/master/content/en/docs/Reference/about-open-cascade.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-    <a href="https://github.com/google/docsy-example/issues/new?title=About%20Open%20Cascade" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
-    
-      
-      <a href="https://github.com/google/docsy/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
-    
-
-  
-  
-    <a id="print" href="https://mantielero.github.io/occt-site/docs/reference/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
-  
-  </div>
-
-
-            
-
-
-
-
-            
-
-	
-		
-			
-		
-		
-
-
-
-  
-  
-    <div class="taxonomy taxonomy-terms-cloud taxo-tags">
-      
-        <h5 class="taxonomy-title">Tag Cloud</h5>
-      
-      <ul class="taxonomy-terms">
-        
-          <li><a class="taxonomy-term" href="https://mantielero.github.io/occt-site/tags/docs/" data-taxonomy-term="docs"><span class="taxonomy-label">docs</span><span class="taxonomy-count">2</span></a></li>
-        
-          <li><a class="taxonomy-term" href="https://mantielero.github.io/occt-site/tags/sample/" data-taxonomy-term="sample"><span class="taxonomy-label">sample</span><span class="taxonomy-count">1</span></a></li>
-        
-          <li><a class="taxonomy-term" href="https://mantielero.github.io/occt-site/tags/test/" data-taxonomy-term="test"><span class="taxonomy-label">test</span><span class="taxonomy-count">2</span></a></li>
-        
-      </ul>
-    </div>
-  
-
-	
-		
-			
-		
-		
-
-
-
-  
-  
-    <div class="taxonomy taxonomy-terms-cloud taxo-categories">
-      
-        <h5 class="taxonomy-title">Categories</h5>
-      
-      <ul class="taxonomy-terms">
-        
-          <li><a class="taxonomy-term" href="https://mantielero.github.io/occt-site/categories/examples/" data-taxonomy-term="examples"><span class="taxonomy-label">Examples</span><span class="taxonomy-count">2</span></a></li>
-        
-          <li><a class="taxonomy-term" href="https://mantielero.github.io/occt-site/categories/placeholders/" data-taxonomy-term="placeholders"><span class="taxonomy-label">Placeholders</span><span class="taxonomy-count">1</span></a></li>
-        
-      </ul>
-    </div>
-  
-
-	
-
-          </aside>
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+          </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/occt-site/docs/reference/gp/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Package: gp</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
   
 
-            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
-	<ol class="breadcrumb spb-1">
-		
+  
+
+    </ul>
 
 
+<div class="content">
+      <p>Open Cascade documentation: <a href="https://dev.opencascade.org/doc/refman/html/package_gp.html">package: gp</a></p>
+<p>Some &ldquo;sugar&rdquo; is added for this package:</p>
+<ol>
+<li>You can mix floats and integers while defining the points.</li>
+<li>You can assign values like <code>pnt.x = 8</code> and get the value with: <code>echo pnt.x</code></li>
+<li>The same applies with: <code>pnt[0] = 8</code>  and <code>echo pnt[0]</code></li>
+</ol>
+<p>For example, <a href="">examples/ex02_pnt.nim</a>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">sugar</span>  <span style="color:#8f5902;font-style:italic"># Provides: `dup`</span>
 
+<span style="color:#8f5902;font-style:italic"># Create two point classes, with (x,y,z) coordinates (you can mix integers and floats)</span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt1</span>  <span style="color:#8f5902;font-style:italic"># Shows: PNT1: Pnt(x:1.0, y:0.2000000029802322, z:2.299999952316284)</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT2: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt2</span>  <span style="color:#8f5902;font-style:italic"># Shows: PNT2: Pnt(x:1.0, y:0.2000000029802322, z:-3.0)</span>
 
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.0</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:3.0, y:0.2000000029802322, z:2.299999952316284) </span>
 
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:1.0, y:0.2000000029802322, z:2.299999952316284)</span>
 
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">set</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:2.0)</span>
 
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt3</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Pnt</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#000">pnt3</span><span style="color:#000;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">set</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt3</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:-1.0, y:-2.0, z:-3.0)</span>
 
+<span style="color:#000">echo</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#ce5c00;font-weight:bold">]</span>                 <span style="color:#8f5902;font-style:italic"># Shows: -1.0 -2.0 -3.0</span>
 
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">distance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#4e9a06">&#34; == &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">distance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>  <span style="color:#8f5902;font-style:italic"># 5.161395072937012 == 5.161395072937012</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">squareDistance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>                          <span style="color:#8f5902;font-style:italic"># 26.63999938964844</span>
+<span style="color:#8f5902;font-style:italic">#echo pnt1.mirrored(pnt2)</span>
+<span style="color:#8f5902;font-style:italic"># Note: in Nim the aim is to make everything in place and to use dup otherwise</span>
+<span style="color:#8f5902;font-style:italic"># https://nim-lang.org/blog/2020/04/03/version-120-released.html#dup</span>
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">mirror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>                   <span style="color:#8f5902;font-style:italic"># Pnt1 mirrored with regard to Pnt2</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt1</span>                 <span style="color:#8f5902;font-style:italic"># Shows: PNT1: Pnt(x:2.0, y:-0.6000000238418579, z:-8.0)</span>
 
-<li class="breadcrumb-item" >
-	<a href="https://mantielero.github.io/occt-site/docs/">Documentation</a>
-</li>
+<span style="color:#8f5902;font-style:italic"># Note: with Nim&#39;s dup, there is no need for opencascade &#34;mirrored&#34; version of of &#34;mirror&#34;.  </span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">dup</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">mirror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>   <span style="color:#8f5902;font-style:italic"># This would be equivalent to Mirrored: https://forum.nim-lang.org/t/7240; we will get the original Pnt1</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT4: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt4</span>                 <span style="color:#8f5902;font-style:italic"># Shows: PNT4: Pnt(x:0.0, y:1.0, z:2.0)          </span>
 
+<span style="color:#000">pnt4</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.0</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt4</span>      <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:3.0)</span>
 
-
-
-<li class="breadcrumb-item" >
-	<a href="https://mantielero.github.io/occt-site/docs/reference/">Reference</a>
-</li>
-
-
-
-
-<li class="breadcrumb-item active" aria-current="page">
-	<a href="https://mantielero.github.io/occt-site/docs/reference/about-open-cascade/">About Open Cascade</a>
-</li>
-
-	</ol>
-</nav	>
-
-            
-<div class="td-content">
-	<h1>About Open Cascade</h1>
-	
-	<header class="article-meta">
-		
-		
-			
-				
-
-
-			
-				
-
-
-			
-		
-		
-	</header>    
-	<p>OpenCascade is organized in different <a href="https://dev.opencascade.org/doc/refman/html/index.html">modules</a> (alphabetic order):</p>
-<ul>
-<li><a href="https://dev.opencascade.org/doc/refman/html/module_applicationframework.html">ApplicationFramework</a></li>
-<li><a href="https://dev.opencascade.org/doc/refman/html/module_dataexchange.html">DataExchange</a></li>
-<li><a href="https://dev.opencascade.org/doc/refman/html/module_draw.html">Draw</a></li>
-<li><a href="https://dev.opencascade.org/doc/refman/html/module_foundationclasses.html">FoundationClasses</a></li>
-<li><a href="https://dev.opencascade.org/doc/refman/html/module_modelingalgorithms.html">ModelingAlgorithms</a></li>
-<li><a href="https://dev.opencascade.org/doc/refman/html/module_modelingdata.html">ModelingData</a></li>
-<li><a href="https://dev.opencascade.org/doc/refman/html/module_visualization.html">Visualization</a></li>
-</ul>
-<p>Each module contain a number of toolkits (TK). For example:</p>
-<ul>
-<li><a href="https://dev.opencascade.org/doc/refman/html/module_foundationclasses.html">FoundationClasses</a>
-<ul>
-<li><a href="https://dev.opencascade.org/doc/refman/html/toolkit_tkernel.html">tkernel</a></li>
-<li><a href="https://dev.opencascade.org/doc/refman/html/toolkit_tkmath.html">tkmath</a></li>
-<li>&hellip;</li>
-</ul>
-</li>
-</ul>
-<p>Each toolkit contains a number of packages as seen for <a href="https://dev.opencascade.org/doc/refman/html/toolkit_tkernel.html">tkernel</a>.</p>
-<p>So OpenCascade is huge (beyond 7600 headers).</p>
-
-	
-		<style>
-  .feedback--answer {
-    display: inline-block;
-  }
-  .feedback--answer-no {
-    margin-left: 1em;
-  }
-  .feedback--response {
-    display: none;
-    margin-top: 1em;
-  }
-  .feedback--response__visible {
-    display: block;
-  }
-</style>
-<div class="d-print-none">
-<h2 class="feedback--title">Feedback</h2>
-<p class="feedback--question">Was this page helpful?</p>
-<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
-<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
-<p class="feedback--response feedback--response-yes">
-  Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.
-</p>
-<p class="feedback--response feedback--response-no">
-  Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.
-</p>
+<span style="color:#000">pnt4</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">2</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt4</span>      <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:-2.0)</span>
+</code></pre></div>
 </div>
-<script>
-  const yesButton = document.querySelector('.feedback--answer-yes');
-  const noButton = document.querySelector('.feedback--answer-no');
-  const yesResponse = document.querySelector('.feedback--response-yes');
-  const noResponse = document.querySelector('.feedback--response-no');
-  const disableButtons = () => {
-    yesButton.disabled = true;
-    noButton.disabled = true;
-  };
-  const sendFeedback = (value) => {
-    if (typeof ga !== 'function') return;
-    const args = {
-      command: 'send',
-      hitType: 'event',
-      category: 'Helpful',
-      action: 'click',
-      label: window.location.pathname,
-      value: value
-    };
-    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
-  };
-  yesButton.addEventListener('click', () => {
-    yesResponse.classList.add('feedback--response__visible');
-    disableButtons();
-    sendFeedback(1);
-  });
-  noButton.addEventListener('click', () => {
-    noResponse.classList.add('feedback--response__visible');
-    disableButtons();
-    sendFeedback(0);
-  });
-</script>
-
-		<br />
-	
-	
-	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified December 8, 2021: <a href="https://github.com/google/docsy-example/commit/8476adf8e7f6c7cca7afb70738b2980edbd81e6a">About and Development started (8476adf)</a>
 </div>
 
-</div>
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
 
 
           </main>

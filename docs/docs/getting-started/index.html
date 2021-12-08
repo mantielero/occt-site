@@ -204,16 +204,23 @@ if (!doNotTrack) {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-occt-sitedocsreference-li">
   <a href="/occt-site/docs/reference/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsreference"><span class="">Reference</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferenceabout-open-cascade-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferencegp-li">
+  <a href="/occt-site/docs/reference/gp/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsreferencegp"><span class="">Package: gp</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferenceabout-open-cascade-li">
   <a href="/occt-site/docs/reference/about-open-cascade/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsreferenceabout-open-cascade"><span class="">About Open Cascade</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferenceparameter-reference-li">
   <a href="/occt-site/docs/reference/parameter-reference/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsreferenceparameter-reference"><span class="">Parameter Reference</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-occt-sitedocsdevelopment-li">
+  <a href="/occt-site/docs/development/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsdevelopment"><span class="">Development</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsdevelopmentintroduction-li">
+  <a href="/occt-site/docs/development/introduction/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsdevelopmentintroduction"><span class="">Introduction</span></a>
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocscontribution-guidelines-li">
   <a href="/occt-site/docs/contribution-guidelines/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocscontribution-guidelines"><span class="">Contribution Guidelines</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsdevelopmentintroduction-li">
-  <a href="/occt-site/docs/development/introduction/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsdevelopmentintroduction"><span class="">Introduction</span></a>
 </li>
   </ul>
 </li>
@@ -265,7 +272,6 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#installation">Installation</a></li>
-    <li><a href="#setup">Setup</a></li>
     <li><a href="#try-it-out">Try it out!</a></li>
   </ul>
 </nav></div>
@@ -414,14 +420,31 @@ if (!doNotTrack) {
 </ul>
 <p>Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?</p>
-<h2 id="installation">Installation</h2>
-<p>Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?</p>
-<h2 id="setup">Setup</h2>
-<p>Is there any initial setup users need to do after installation to try your project?</p>
-<h2 id="try-it-out">Try it out!</h2>
-<p>Can your users test their installation, for example by running a command or deploying a Hello World example?</p>
+<p>The prerequisites are:</p>
+<ul>
+<li><a href="https://nim-lang.org/install.html">Nim language</a></li>
+<li>Open Cascade library: for instance, in ArchLinux, you can just do: <code>$ yay -S opencascade</code>. Check in your own distribution.</li>
+</ul>
 
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+
+    Windows is untested yet.
+
+</div>
+
+<h2 id="installation">Installation</h2>
+<p>It can be installed using nimble:</p>
+<pre tabindex="0"><code>$ nimble install https://github.com/mantielero/occt.nim
+</code></pre><h2 id="try-it-out">Try it out!</h2>
+<p>Once installed, you can run your first example. For example, in order to create a point, you could create the text file <code>ex00.nim</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">include</span> <span style="color:#000">occt</span>
+<span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">aPnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#0000cf;font-weight:bold">20</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">40</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">aPnt1</span>
+</code></pre></div><p>This code can be compiled and run with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ nim cpp ex00
+</code></pre></div>
         <div class="section-index">
     
     

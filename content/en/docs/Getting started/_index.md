@@ -22,16 +22,33 @@ Consider using the headings below for your getting started page. You can delete 
 
 ## Prerequisites
 
-Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?
+The prerequisites are:
+
+- [Nim language](https://nim-lang.org/install.html)
+- Open Cascade library: for instance, in ArchLinux, you can just do: `$ yay -S opencascade`. Check in your own distribution.
+
+{{< alert color="warning" title="Warning" >}}Windows is untested yet.{{< /alert >}}
 
 ## Installation
 
-Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?
+It can be installed using nimble:
 
-## Setup
+```
+$ nimble install https://github.com/mantielero/occt.nim
+```
 
-Is there any initial setup users need to do after installation to try your project?
 
 ## Try it out!
 
-Can your users test their installation, for example by running a command or deploying a Hello World example?
+Once installed, you can run your first example. For example, in order to create a point, you could create the text file `ex00.nim`:
+
+```nim
+include occt
+let aPnt1 = newPnt( 20, 30, 40)
+echo aPnt1
+```
+
+This code can be compiled and run with:
+```bash
+$ nim cpp ex00
+```

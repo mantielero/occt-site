@@ -182,7 +182,26 @@ This the multi-page printable view of this section.
     
     
 	
-<li>1: <a href="#pg-dd19dff0f4fb8d2626c859c6c67db8ae">About Open Cascade</a></li>
+<li>1: <a href="#pg-6fc599b9790e9a657ca647cfa46a60e0">Package: gp</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-dd19dff0f4fb8d2626c859c6c67db8ae">About Open Cascade</a></li>
 
 
     
@@ -190,7 +209,7 @@ This the multi-page printable view of this section.
     
     
 	
-<li>2: <a href="#pg-fae1ff8e3c30cfdbe85045f64e0a7b36">Parameter Reference</a></li>
+<li>3: <a href="#pg-fae1ff8e3c30cfdbe85045f64e0a7b36">Parameter Reference</a></li>
 
 
     
@@ -230,7 +249,85 @@ Javadoc, or other doc generation tools by putting them in your <code>static/</co
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-dd19dff0f4fb8d2626c859c6c67db8ae">1 - About Open Cascade</h1>
+	<h1 id="pg-6fc599b9790e9a657ca647cfa46a60e0">1 - Package: gp</h1>
+    
+	<p>Open Cascade documentation: <a href="https://dev.opencascade.org/doc/refman/html/package_gp.html">package: gp</a></p>
+<p>Some &ldquo;sugar&rdquo; is added for this package:</p>
+<ol>
+<li>You can mix floats and integers while defining the points.</li>
+<li>You can assign values like <code>pnt.x = 8</code> and get the value with: <code>echo pnt.x</code></li>
+<li>The same applies with: <code>pnt[0] = 8</code>  and <code>echo pnt[0]</code></li>
+</ol>
+<p>For example, <a href="">examples/ex02_pnt.nim</a>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">sugar</span>  <span style="color:#8f5902;font-style:italic"># Provides: `dup`</span>
+
+<span style="color:#8f5902;font-style:italic"># Create two point classes, with (x,y,z) coordinates (you can mix integers and floats)</span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt1</span>  <span style="color:#8f5902;font-style:italic"># Shows: PNT1: Pnt(x:1.0, y:0.2000000029802322, z:2.299999952316284)</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT2: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt2</span>  <span style="color:#8f5902;font-style:italic"># Shows: PNT2: Pnt(x:1.0, y:0.2000000029802322, z:-3.0)</span>
+
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.0</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:3.0, y:0.2000000029802322, z:2.299999952316284) </span>
+
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:1.0, y:0.2000000029802322, z:2.299999952316284)</span>
+
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">set</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:2.0)</span>
+
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt3</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Pnt</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#000">pnt3</span><span style="color:#000;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">set</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt3</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:-1.0, y:-2.0, z:-3.0)</span>
+
+<span style="color:#000">echo</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#ce5c00;font-weight:bold">]</span>                 <span style="color:#8f5902;font-style:italic"># Shows: -1.0 -2.0 -3.0</span>
+
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">distance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#4e9a06">&#34; == &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">distance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>  <span style="color:#8f5902;font-style:italic"># 5.161395072937012 == 5.161395072937012</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">squareDistance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>                          <span style="color:#8f5902;font-style:italic"># 26.63999938964844</span>
+<span style="color:#8f5902;font-style:italic">#echo pnt1.mirrored(pnt2)</span>
+<span style="color:#8f5902;font-style:italic"># Note: in Nim the aim is to make everything in place and to use dup otherwise</span>
+<span style="color:#8f5902;font-style:italic"># https://nim-lang.org/blog/2020/04/03/version-120-released.html#dup</span>
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">mirror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>                   <span style="color:#8f5902;font-style:italic"># Pnt1 mirrored with regard to Pnt2</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt1</span>                 <span style="color:#8f5902;font-style:italic"># Shows: PNT1: Pnt(x:2.0, y:-0.6000000238418579, z:-8.0)</span>
+
+<span style="color:#8f5902;font-style:italic"># Note: with Nim&#39;s dup, there is no need for opencascade &#34;mirrored&#34; version of of &#34;mirror&#34;.  </span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">dup</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">mirror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>   <span style="color:#8f5902;font-style:italic"># This would be equivalent to Mirrored: https://forum.nim-lang.org/t/7240; we will get the original Pnt1</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT4: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt4</span>                 <span style="color:#8f5902;font-style:italic"># Shows: PNT4: Pnt(x:0.0, y:1.0, z:2.0)          </span>
+
+<span style="color:#000">pnt4</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.0</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt4</span>      <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:3.0)</span>
+
+<span style="color:#000">pnt4</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">2</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt4</span>      <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:-2.0)</span>
+</code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-dd19dff0f4fb8d2626c859c6c67db8ae">2 - About Open Cascade</h1>
     
 	<p>OpenCascade is organized in different <a href="https://dev.opencascade.org/doc/refman/html/index.html">modules</a> (alphabetic order):</p>
 <ul>
@@ -269,7 +366,7 @@ Javadoc, or other doc generation tools by putting them in your <code>static/</co
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-fae1ff8e3c30cfdbe85045f64e0a7b36">2 - Parameter Reference</h1>
+	<h1 id="pg-fae1ff8e3c30cfdbe85045f64e0a7b36">3 - Parameter Reference</h1>
     <div class="lead">A short lead description about this content page. It can be <strong>bold</strong> or <em>italic</em> and can be split over multiple paragraphs.</div>
 	
 

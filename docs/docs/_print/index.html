@@ -398,27 +398,7 @@ This the multi-page printable view of this section.
     
     
 	
-<li>7.1: <a href="#pg-dd19dff0f4fb8d2626c859c6c67db8ae">About Open Cascade</a></li>
-
-
-    
-  
-    
-    
-	
-<li>7.2: <a href="#pg-fae1ff8e3c30cfdbe85045f64e0a7b36">Parameter Reference</a></li>
-
-
-    
-  
-
-    </ul>
-    
-  
-    
-    
-	
-<li>8: <a href="#pg-8efbf7499fe9c7bde8d2c1bb7ff6ee3c">Contribution Guidelines</a></li>
+<li>7.1: <a href="#pg-6fc599b9790e9a657ca647cfa46a60e0">Package: gp</a></li>
 
 
     
@@ -437,9 +417,67 @@ This the multi-page printable view of this section.
     
     
 	
-<li>9: <a href="#pg-45b90ebf406e018616152bf90dbdea73">Introduction</a></li>
+<li>7.2: <a href="#pg-dd19dff0f4fb8d2626c859c6c67db8ae">About Open Cascade</a></li>
 
 
+    
+  
+    
+    
+	
+<li>7.3: <a href="#pg-fae1ff8e3c30cfdbe85045f64e0a7b36">Parameter Reference</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>8: <a href="#pg-39f3813de34ce5cae320697c88e2a917">Development</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>8.1: <a href="#pg-45b90ebf406e018616152bf90dbdea73">Introduction</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>9: <a href="#pg-8efbf7499fe9c7bde8d2c1bb7ff6ee3c">Contribution Guidelines</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
     
   
 
@@ -558,14 +596,31 @@ This the multi-page printable view of this section.
 </ul>
 <p>Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?</p>
-<h2 id="installation">Installation</h2>
-<p>Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?</p>
-<h2 id="setup">Setup</h2>
-<p>Is there any initial setup users need to do after installation to try your project?</p>
-<h2 id="try-it-out">Try it out!</h2>
-<p>Can your users test their installation, for example by running a command or deploying a Hello World example?</p>
+<p>The prerequisites are:</p>
+<ul>
+<li><a href="https://nim-lang.org/install.html">Nim language</a></li>
+<li>Open Cascade library: for instance, in ArchLinux, you can just do: <code>$ yay -S opencascade</code>. Check in your own distribution.</li>
+</ul>
 
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+
+    Windows is untested yet.
+
+</div>
+
+<h2 id="installation">Installation</h2>
+<p>It can be installed using nimble:</p>
+<pre tabindex="0"><code>$ nimble install https://github.com/mantielero/occt.nim
+</code></pre><h2 id="try-it-out">Try it out!</h2>
+<p>Once installed, you can run your first example. For example, in order to create a point, you could create the text file <code>ex00.nim</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">include</span> <span style="color:#000">occt</span>
+<span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">aPnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#0000cf;font-weight:bold">20</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">40</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">aPnt1</span>
+</code></pre></div><p>This code can be compiled and run with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ nim cpp ex00
+</code></pre></div>
 </div>
 
 
@@ -3356,7 +3411,85 @@ Javadoc, or other doc generation tools by putting them in your <code>static/</co
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-dd19dff0f4fb8d2626c859c6c67db8ae">7.1 - About Open Cascade</h1>
+	<h1 id="pg-6fc599b9790e9a657ca647cfa46a60e0">7.1 - Package: gp</h1>
+    
+	<p>Open Cascade documentation: <a href="https://dev.opencascade.org/doc/refman/html/package_gp.html">package: gp</a></p>
+<p>Some &ldquo;sugar&rdquo; is added for this package:</p>
+<ol>
+<li>You can mix floats and integers while defining the points.</li>
+<li>You can assign values like <code>pnt.x = 8</code> and get the value with: <code>echo pnt.x</code></li>
+<li>The same applies with: <code>pnt[0] = 8</code>  and <code>echo pnt[0]</code></li>
+</ol>
+<p>For example, <a href="">examples/ex02_pnt.nim</a>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">sugar</span>  <span style="color:#8f5902;font-style:italic"># Provides: `dup`</span>
+
+<span style="color:#8f5902;font-style:italic"># Create two point classes, with (x,y,z) coordinates (you can mix integers and floats)</span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt1</span>  <span style="color:#8f5902;font-style:italic"># Shows: PNT1: Pnt(x:1.0, y:0.2000000029802322, z:2.299999952316284)</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT2: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt2</span>  <span style="color:#8f5902;font-style:italic"># Shows: PNT2: Pnt(x:1.0, y:0.2000000029802322, z:-3.0)</span>
+
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.0</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:3.0, y:0.2000000029802322, z:2.299999952316284) </span>
+
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:1.0, y:0.2000000029802322, z:2.299999952316284)</span>
+
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">set</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:2.0)</span>
+
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt3</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Pnt</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#000">pnt3</span><span style="color:#000;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">set</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt3</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:-1.0, y:-2.0, z:-3.0)</span>
+
+<span style="color:#000">echo</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#ce5c00;font-weight:bold">]</span>                 <span style="color:#8f5902;font-style:italic"># Shows: -1.0 -2.0 -3.0</span>
+
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">distance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#4e9a06">&#34; == &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">distance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>  <span style="color:#8f5902;font-style:italic"># 5.161395072937012 == 5.161395072937012</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">squareDistance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>                          <span style="color:#8f5902;font-style:italic"># 26.63999938964844</span>
+<span style="color:#8f5902;font-style:italic">#echo pnt1.mirrored(pnt2)</span>
+<span style="color:#8f5902;font-style:italic"># Note: in Nim the aim is to make everything in place and to use dup otherwise</span>
+<span style="color:#8f5902;font-style:italic"># https://nim-lang.org/blog/2020/04/03/version-120-released.html#dup</span>
+<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">mirror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>                   <span style="color:#8f5902;font-style:italic"># Pnt1 mirrored with regard to Pnt2</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt1</span>                 <span style="color:#8f5902;font-style:italic"># Shows: PNT1: Pnt(x:2.0, y:-0.6000000238418579, z:-8.0)</span>
+
+<span style="color:#8f5902;font-style:italic"># Note: with Nim&#39;s dup, there is no need for opencascade &#34;mirrored&#34; version of of &#34;mirror&#34;.  </span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">dup</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">mirror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>   <span style="color:#8f5902;font-style:italic"># This would be equivalent to Mirrored: https://forum.nim-lang.org/t/7240; we will get the original Pnt1</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT4: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt4</span>                 <span style="color:#8f5902;font-style:italic"># Shows: PNT4: Pnt(x:0.0, y:1.0, z:2.0)          </span>
+
+<span style="color:#000">pnt4</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.0</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt4</span>      <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:3.0)</span>
+
+<span style="color:#000">pnt4</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">2</span>
+<span style="color:#000">echo</span> <span style="color:#000">pnt4</span>      <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:-2.0)</span>
+</code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-dd19dff0f4fb8d2626c859c6c67db8ae">7.2 - About Open Cascade</h1>
     
 	<p>OpenCascade is organized in different <a href="https://dev.opencascade.org/doc/refman/html/index.html">modules</a> (alphabetic order):</p>
 <ul>
@@ -3395,7 +3528,7 @@ Javadoc, or other doc generation tools by putting them in your <code>static/</co
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-fae1ff8e3c30cfdbe85045f64e0a7b36">7.2 - Parameter Reference</h1>
+	<h1 id="pg-fae1ff8e3c30cfdbe85045f64e0a7b36">7.3 - Parameter Reference</h1>
     <div class="lead">A short lead description about this content page. It can be <strong>bold</strong> or <em>italic</em> and can be split over multiple paragraphs.</div>
 	
 
@@ -3706,79 +3839,33 @@ bar := &quot;foo&quot;;
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-8efbf7499fe9c7bde8d2c1bb7ff6ee3c">8 - Contribution Guidelines</h1>
-    <div class="lead">How to contribute to the docs</div>
+	<h1 id="pg-39f3813de34ce5cae320697c88e2a917">8 - Development</h1>
+    <div class="lead">Shows some notes about the project itself. This migth help others to contribute.</div>
 	
 
 <div class="pageinfo pageinfo-primary">
-<p>These basic sample guidelines assume that your Docsy site is deployed using Netlify and your files are stored in GitHub. You can use the guidelines &ldquo;as is&rdquo; or adapt them with your own instructions: for example, other deployment options, information about your doc project&rsquo;s file structure, project-specific review guidelines, versioning guidelines, or any other information your users might find useful when updating your site. <a href="https://github.com/kubeflow/website/blob/master/README.md">Kubeflow</a> has a great example.</p>
-<p>Don&rsquo;t forget to link to your own doc repo rather than our example site! Also make sure users can find these guidelines from your doc repo README: either add them there and link to them from this page, add them here and link to them from the README, or include them in both locations.</p>
+<p>This is a placeholder page that shows you how to use this template site.</p>
 
 </div>
 
-<p>We use <a href="https://gohugo.io/">Hugo</a> to format and generate our website, the
-<a href="https://github.com/google/docsy">Docsy</a> theme for styling and site structure,
-and <a href="https://www.netlify.com/">Netlify</a> to manage the deployment of the site.
-Hugo is an open-source static site generator that provides us with templates,
-content organisation in a standard directory structure, and a website generation
-engine. You write the pages in Markdown (or HTML if you want), and Hugo wraps them up into a website.</p>
-<p>All submissions, including submissions by project members, require review. We
-use GitHub pull requests for this purpose. Consult
-<a href="https://help.github.com/articles/about-pull-requests/">GitHub Help</a> for more
-information on using pull requests.</p>
-<h2 id="quick-start-with-netlify">Quick start with Netlify</h2>
-<p>Here&rsquo;s a quick guide to updating the docs. It assumes you&rsquo;re familiar with the
-GitHub workflow and you&rsquo;re happy to use the automated preview of your doc
-updates:</p>
-<ol>
-<li>Fork the <a href="https://github.com/google/docsy-example">Goldydocs repo</a> on GitHub.</li>
-<li>Make your changes and send a pull request (PR).</li>
-<li>If you&rsquo;re not yet ready for a review, add &ldquo;WIP&rdquo; to the PR name to indicate
-it&rsquo;s a work in progress. (<strong>Don&rsquo;t</strong> add the Hugo property
-&ldquo;draft = true&rdquo; to the page front matter, because that prevents the
-auto-deployment of the content preview described in the next point.)</li>
-<li>Wait for the automated PR workflow to do some checks. When it&rsquo;s ready,
-you should see a comment like this: <strong>deploy/netlify — Deploy preview ready!</strong></li>
-<li>Click <strong>Details</strong> to the right of &ldquo;Deploy preview ready&rdquo; to see a preview
-of your updates.</li>
-<li>Continue updating your doc and pushing your changes until you&rsquo;re happy with
-the content.</li>
-<li>When you&rsquo;re ready for a review, add a comment to the PR, and remove any
-&ldquo;WIP&rdquo; markers.</li>
-</ol>
-<h2 id="updating-a-single-page">Updating a single page</h2>
-<p>If you&rsquo;ve just spotted something you&rsquo;d like to change while using the docs, Docsy has a shortcut for you:</p>
-<ol>
-<li>Click <strong>Edit this page</strong> in the top right hand corner of the page.</li>
-<li>If you don&rsquo;t already have an up to date fork of the project repo, you are prompted to get one - click <strong>Fork this repository and propose changes</strong> or <strong>Update your Fork</strong> to get an up to date version of the project to edit. The appropriate page in your fork is displayed in edit mode.</li>
-<li>Follow the rest of the <a href="#quick-start-with-netlify">Quick start with Netlify</a> process above to make, preview, and propose your changes.</li>
-</ol>
-<h2 id="previewing-your-changes-locally">Previewing your changes locally</h2>
-<p>If you want to run your own local Hugo server to preview your changes as you work:</p>
-<ol>
-<li>
-<p>Follow the instructions in <a href="/docs/getting-started">Getting started</a> to install Hugo and any other tools you need. You&rsquo;ll need at least <strong>Hugo version 0.45</strong> (we recommend using the most recent available version), and it must be the <strong>extended</strong> version, which supports SCSS.</p>
-</li>
-<li>
-<p>Fork the <a href="https://github.com/google/docsy-example">Goldydocs repo</a> repo into your own project, then create a local copy using <code>git clone</code>. Don’t forget to use <code>--recurse-submodules</code> or you won’t pull down some of the code you need to generate a working site.</p>
-<pre tabindex="0"><code>git clone --recurse-submodules --depth 1 https://github.com/google/docsy-example.git
-</code></pre></li>
-<li>
-<p>Run <code>hugo server</code> in the site root directory. By default your site will be available at http://localhost:1313/. Now that you&rsquo;re serving your site locally, Hugo will watch for changes to the content and automatically refresh your site.</p>
-</li>
-<li>
-<p>Continue with the usual GitHub workflow to edit files, commit them, push the
-changes up to your fork, and create a pull request.</p>
-</li>
-</ol>
-<h2 id="creating-an-issue">Creating an issue</h2>
-<p>If you&rsquo;ve found a problem in the docs, but you&rsquo;re not sure how to fix it yourself, please create an issue in the <a href="https://github.com/google/docsy-example/issues">Goldydocs repo</a>. You can also create an issue about a specific page by clicking the <strong>Create Issue</strong> button in the top right hand corner of the page.</p>
-<h2 id="useful-resources">Useful resources</h2>
+<p>This</p>
 <ul>
-<li><a href="https://www.docsy.dev/docs/">Docsy user guide</a>: All about Docsy, including how it manages navigation, look and feel, and multi-language support.</li>
-<li><a href="https://gohugo.io/documentation/">Hugo documentation</a>: Comprehensive reference for Hugo.</li>
-<li><a href="https://guides.github.com/activities/hello-world/">Github Hello World!</a>: A basic introduction to GitHub concepts and workflow.</li>
+<li>
+<p>What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.</p>
+</li>
+<li>
+<p>Introductory “Hello World” example, if appropriate. More complex tutorials should live in the Tutorials section.</p>
+</li>
 </ul>
+<p>Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?</p>
+<h2 id="installation">Installation</h2>
+<p>Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?</p>
+<h2 id="setup">Setup</h2>
+<p>Is there any initial setup users need to do after installation to try your project?</p>
+<h2 id="try-it-out">Try it out!</h2>
+<p>Can your users test their installation, for example by running a command or deploying a Hello World example?</p>
 
 </div>
 
@@ -3795,10 +3882,6 @@ changes up to your fork, and create a pull request.</p>
   
 
   
-
-    
-	
-  
     
     
 	
@@ -3806,7 +3889,7 @@ changes up to your fork, and create a pull request.</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-45b90ebf406e018616152bf90dbdea73">9 - Introduction</h1>
+	<h1 id="pg-45b90ebf406e018616152bf90dbdea73">8.1 - Introduction</h1>
     
 	<h1 id="development">Development</h1>
 <h2 id="wrapping-process">Wrapping process</h2>
@@ -4108,6 +4191,110 @@ from OCCT.TopoDS import TopoDS_Shape
 </div>
 
 
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8efbf7499fe9c7bde8d2c1bb7ff6ee3c">9 - Contribution Guidelines</h1>
+    <div class="lead">How to contribute to the docs</div>
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>These basic sample guidelines assume that your Docsy site is deployed using Netlify and your files are stored in GitHub. You can use the guidelines &ldquo;as is&rdquo; or adapt them with your own instructions: for example, other deployment options, information about your doc project&rsquo;s file structure, project-specific review guidelines, versioning guidelines, or any other information your users might find useful when updating your site. <a href="https://github.com/kubeflow/website/blob/master/README.md">Kubeflow</a> has a great example.</p>
+<p>Don&rsquo;t forget to link to your own doc repo rather than our example site! Also make sure users can find these guidelines from your doc repo README: either add them there and link to them from this page, add them here and link to them from the README, or include them in both locations.</p>
+
+</div>
+
+<p>We use <a href="https://gohugo.io/">Hugo</a> to format and generate our website, the
+<a href="https://github.com/google/docsy">Docsy</a> theme for styling and site structure,
+and <a href="https://www.netlify.com/">Netlify</a> to manage the deployment of the site.
+Hugo is an open-source static site generator that provides us with templates,
+content organisation in a standard directory structure, and a website generation
+engine. You write the pages in Markdown (or HTML if you want), and Hugo wraps them up into a website.</p>
+<p>All submissions, including submissions by project members, require review. We
+use GitHub pull requests for this purpose. Consult
+<a href="https://help.github.com/articles/about-pull-requests/">GitHub Help</a> for more
+information on using pull requests.</p>
+<h2 id="quick-start-with-netlify">Quick start with Netlify</h2>
+<p>Here&rsquo;s a quick guide to updating the docs. It assumes you&rsquo;re familiar with the
+GitHub workflow and you&rsquo;re happy to use the automated preview of your doc
+updates:</p>
+<ol>
+<li>Fork the <a href="https://github.com/google/docsy-example">Goldydocs repo</a> on GitHub.</li>
+<li>Make your changes and send a pull request (PR).</li>
+<li>If you&rsquo;re not yet ready for a review, add &ldquo;WIP&rdquo; to the PR name to indicate
+it&rsquo;s a work in progress. (<strong>Don&rsquo;t</strong> add the Hugo property
+&ldquo;draft = true&rdquo; to the page front matter, because that prevents the
+auto-deployment of the content preview described in the next point.)</li>
+<li>Wait for the automated PR workflow to do some checks. When it&rsquo;s ready,
+you should see a comment like this: <strong>deploy/netlify — Deploy preview ready!</strong></li>
+<li>Click <strong>Details</strong> to the right of &ldquo;Deploy preview ready&rdquo; to see a preview
+of your updates.</li>
+<li>Continue updating your doc and pushing your changes until you&rsquo;re happy with
+the content.</li>
+<li>When you&rsquo;re ready for a review, add a comment to the PR, and remove any
+&ldquo;WIP&rdquo; markers.</li>
+</ol>
+<h2 id="updating-a-single-page">Updating a single page</h2>
+<p>If you&rsquo;ve just spotted something you&rsquo;d like to change while using the docs, Docsy has a shortcut for you:</p>
+<ol>
+<li>Click <strong>Edit this page</strong> in the top right hand corner of the page.</li>
+<li>If you don&rsquo;t already have an up to date fork of the project repo, you are prompted to get one - click <strong>Fork this repository and propose changes</strong> or <strong>Update your Fork</strong> to get an up to date version of the project to edit. The appropriate page in your fork is displayed in edit mode.</li>
+<li>Follow the rest of the <a href="#quick-start-with-netlify">Quick start with Netlify</a> process above to make, preview, and propose your changes.</li>
+</ol>
+<h2 id="previewing-your-changes-locally">Previewing your changes locally</h2>
+<p>If you want to run your own local Hugo server to preview your changes as you work:</p>
+<ol>
+<li>
+<p>Follow the instructions in <a href="/docs/getting-started">Getting started</a> to install Hugo and any other tools you need. You&rsquo;ll need at least <strong>Hugo version 0.45</strong> (we recommend using the most recent available version), and it must be the <strong>extended</strong> version, which supports SCSS.</p>
+</li>
+<li>
+<p>Fork the <a href="https://github.com/google/docsy-example">Goldydocs repo</a> repo into your own project, then create a local copy using <code>git clone</code>. Don’t forget to use <code>--recurse-submodules</code> or you won’t pull down some of the code you need to generate a working site.</p>
+<pre tabindex="0"><code>git clone --recurse-submodules --depth 1 https://github.com/google/docsy-example.git
+</code></pre></li>
+<li>
+<p>Run <code>hugo server</code> in the site root directory. By default your site will be available at http://localhost:1313/. Now that you&rsquo;re serving your site locally, Hugo will watch for changes to the content and automatically refresh your site.</p>
+</li>
+<li>
+<p>Continue with the usual GitHub workflow to edit files, commit them, push the
+changes up to your fork, and create a pull request.</p>
+</li>
+</ol>
+<h2 id="creating-an-issue">Creating an issue</h2>
+<p>If you&rsquo;ve found a problem in the docs, but you&rsquo;re not sure how to fix it yourself, please create an issue in the <a href="https://github.com/google/docsy-example/issues">Goldydocs repo</a>. You can also create an issue about a specific page by clicking the <strong>Create Issue</strong> button in the top right hand corner of the page.</p>
+<h2 id="useful-resources">Useful resources</h2>
+<ul>
+<li><a href="https://www.docsy.dev/docs/">Docsy user guide</a>: All about Docsy, including how it manages navigation, look and feel, and multi-language support.</li>
+<li><a href="https://gohugo.io/documentation/">Hugo documentation</a>: Comprehensive reference for Hugo.</li>
+<li><a href="https://guides.github.com/activities/hello-world/">Github Hello World!</a>: A basic introduction to GitHub concepts and workflow.</li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
 
     
 	
