@@ -4,7 +4,57 @@ date: 2021-12-08T11:57:15+01:00
 
 ---
 
-Open Cascade documentation: [package: gp](https://dev.opencascade.org/doc/refman/html/package_gp.html)
+Open Cascade documentation: [gp](https://dev.opencascade.org/doc/refman/html/package_gp.html).
+
+This package provides the following:
+
+- [Pnt](pnt): defines a 3D cartesian point.
+- [Xyz](xyz): describes a cartesian coordinate entity in 3D space {X,Y,Z}. This entity is used for algebraic calculation. This entity can be transformed with a "Trsf" or a "GTrsf" from package "gp". It is used in vectorial computations or for holding this type of information in data structures.
+- [Vec](vec): defines a non-persistent vector in 3D space.
+
+
+- gp_Ax2
+- gp_Ax22d
+- gp_Ax2d
+- gp_Ax3
+- gp_Circ
+- gp_Circ2d
+- gp_Cone
+- gp_Cylinder
+- gp_Dir
+- gp_Dir2d
+- gp_Elips
+- gp_Elips2d
+- gp_EulerSequence
+- gp_GTrsf
+- gp_GTrsf2d
+- gp_Hypr
+- gp_Hypr2d
+- gp_Lin
+- gp_Lin2d
+- gp_Mat
+- gp_Mat2d
+- gp_Parab
+- gp_Parab2d
+- gp_Pln
+- gp_Pnt2d
+- gp_Quaternion
+- gp_QuaternionNLerp
+- gp_QuaternionSLerp
+- gp_Sphere
+- gp_Torus
+
+- gp_Trsf
+- gp_Trsf2d
+- gp_TrsfForm
+- gp_TrsfNLerp
+
+- gp_Vec2d
+- gp_Vec2f
+- gp_Vec3f
+- gp_VectorWithNullMagnitude
+- gp_XY
+
 
 Some "sugar" is added for this package:
 
@@ -12,47 +62,3 @@ Some "sugar" is added for this package:
 2. You can assign values like `pnt.x = 8` and get the value with: `echo pnt.x`
 3. The same applies with: `pnt[0] = 8`  and `echo pnt[0]`
 
-For example, [examples/ex02_pnt.nim]():
-```nim
-import occt
-import sugar  # Provides: `dup`
-
-# Create two point classes, with (x,y,z) coordinates (you can mix integers and floats)
-var pnt1 = newPnt(1.0, 0.2, 2.3)
-var pnt2 = newPnt(1, 0.2, -3)
-echo "PNT1: ", pnt1  # Shows: PNT1: Pnt(x:1.0, y:0.2000000029802322, z:2.299999952316284)
-echo "PNT2: ", pnt2  # Shows: PNT2: Pnt(x:1.0, y:0.2000000029802322, z:-3.0)
-
-pnt1.x = 3.0
-echo pnt1            # Shows: Pnt(x:3.0, y:0.2000000029802322, z:2.299999952316284) 
-
-pnt1.x = 1
-echo pnt1            # Shows: Pnt(x:1.0, y:0.2000000029802322, z:2.299999952316284)
-
-pnt1.set(0, 1.0, 2)
-echo pnt1            # Shows: Pnt(x:0.0, y:1.0, z:2.0)
-
-var pnt3 = Pnt()
-pnt3.set(-1,-2,-3)
-echo pnt3            # Shows: Pnt(x:-1.0, y:-2.0, z:-3.0)
-
-echo pnt3[0]," ", pnt3[1], " ", pnt3[2]                 # Shows: -1.0 -2.0 -3.0
-
-echo pnt1.distance(pnt2), " == ", distance(pnt1, pnt2)  # 5.161395072937012 == 5.161395072937012
-echo pnt1.squareDistance(pnt2)                          # 26.63999938964844
-#echo pnt1.mirrored(pnt2)
-# Note: in Nim the aim is to make everything in place and to use dup otherwise
-# https://nim-lang.org/blog/2020/04/03/version-120-released.html#dup
-pnt1.mirror(pnt2)                   # Pnt1 mirrored with regard to Pnt2
-echo "PNT1: ", pnt1                 # Shows: PNT1: Pnt(x:2.0, y:-0.6000000238418579, z:-8.0)
-
-# Note: with Nim's dup, there is no need for opencascade "mirrored" version of of "mirror".  
-var pnt4 = pnt1.dup: mirror(pnt2)   # This would be equivalent to Mirrored: https://forum.nim-lang.org/t/7240; we will get the original Pnt1
-echo "PNT4: ", pnt4                 # Shows: PNT4: Pnt(x:0.0, y:1.0, z:2.0)          
-
-pnt4[2] = 3.0
-echo pnt4      # Shows: Pnt(x:0.0, y:1.0, z:3.0)
-
-pnt4.z = -2
-echo pnt4      # Shows: Pnt(x:0.0, y:1.0, z:-2.0)
-```

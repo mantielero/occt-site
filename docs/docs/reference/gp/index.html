@@ -23,10 +23,14 @@
 
 
   
-  <meta name="description" content="Open Cascade documentation: package: gp
-Some &ldquo;sugar&rdquo; is added for this package:
+  <meta name="description" content="Open Cascade documentation: gp.
+This package provides the following:
 
-You can mix floats and integers while defining the …">
+
+Pnt: defines a 3D cartesian point.
+
+
+Xyz: describes a cartesian coordinate …">
 <meta property="og:title" content="Package: gp" />
 <meta property="og:description" content="Open Cascade bindings for Nim language" />
 <meta property="og:type" content="website" />
@@ -204,8 +208,17 @@ if (!doNotTrack) {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-occt-sitedocsreference-li">
   <a href="/occt-site/docs/reference/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsreference"><span class="">Reference</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-occt-sitedocsreferencegp-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-occt-sitedocsreferencegp-li">
   <a href="/occt-site/docs/reference/gp/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsreferencegp"><span class="td-sidebar-nav-active-item">Package: gp</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferencegpvec-li">
+  <a href="/occt-site/docs/reference/gp/vec/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsreferencegpvec"><span class="">Vec</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferencegpxyz-li">
+  <a href="/occt-site/docs/reference/gp/xyz/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsreferencegpxyz"><span class="">Xyz</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferencegppnt-li">
+  <a href="/occt-site/docs/reference/gp/pnt/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsreferencegppnt"><span class="">Pnt</span></a>
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferenceabout-open-cascade-li">
   <a href="/occt-site/docs/reference/about-open-cascade/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocsreferenceabout-open-cascade"><span class="">About Open Cascade</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferenceparameter-reference-li">
@@ -382,56 +395,143 @@ if (!doNotTrack) {
 		
 		
 	</header>
-	<p>Open Cascade documentation: <a href="https://dev.opencascade.org/doc/refman/html/package_gp.html">package: gp</a></p>
+	<p>Open Cascade documentation: <a href="https://dev.opencascade.org/doc/refman/html/package_gp.html">gp</a>.</p>
+<p>This package provides the following:</p>
+<ul>
+<li>
+<p><a href="pnt">Pnt</a>: defines a 3D cartesian point.</p>
+</li>
+<li>
+<p><a href="xyz">Xyz</a>: describes a cartesian coordinate entity in 3D space {X,Y,Z}. This entity is used for algebraic calculation. This entity can be transformed with a &ldquo;Trsf&rdquo; or a &ldquo;GTrsf&rdquo; from package &ldquo;gp&rdquo;. It is used in vectorial computations or for holding this type of information in data structures.</p>
+</li>
+<li>
+<p><a href="vec">Vec</a>: defines a non-persistent vector in 3D space.</p>
+</li>
+<li>
+<p>gp_Ax2</p>
+</li>
+<li>
+<p>gp_Ax22d</p>
+</li>
+<li>
+<p>gp_Ax2d</p>
+</li>
+<li>
+<p>gp_Ax3</p>
+</li>
+<li>
+<p>gp_Circ</p>
+</li>
+<li>
+<p>gp_Circ2d</p>
+</li>
+<li>
+<p>gp_Cone</p>
+</li>
+<li>
+<p>gp_Cylinder</p>
+</li>
+<li>
+<p>gp_Dir</p>
+</li>
+<li>
+<p>gp_Dir2d</p>
+</li>
+<li>
+<p>gp_Elips</p>
+</li>
+<li>
+<p>gp_Elips2d</p>
+</li>
+<li>
+<p>gp_EulerSequence</p>
+</li>
+<li>
+<p>gp_GTrsf</p>
+</li>
+<li>
+<p>gp_GTrsf2d</p>
+</li>
+<li>
+<p>gp_Hypr</p>
+</li>
+<li>
+<p>gp_Hypr2d</p>
+</li>
+<li>
+<p>gp_Lin</p>
+</li>
+<li>
+<p>gp_Lin2d</p>
+</li>
+<li>
+<p>gp_Mat</p>
+</li>
+<li>
+<p>gp_Mat2d</p>
+</li>
+<li>
+<p>gp_Parab</p>
+</li>
+<li>
+<p>gp_Parab2d</p>
+</li>
+<li>
+<p>gp_Pln</p>
+</li>
+<li>
+<p>gp_Pnt2d</p>
+</li>
+<li>
+<p>gp_Quaternion</p>
+</li>
+<li>
+<p>gp_QuaternionNLerp</p>
+</li>
+<li>
+<p>gp_QuaternionSLerp</p>
+</li>
+<li>
+<p>gp_Sphere</p>
+</li>
+<li>
+<p>gp_Torus</p>
+</li>
+<li>
+<p>gp_Trsf</p>
+</li>
+<li>
+<p>gp_Trsf2d</p>
+</li>
+<li>
+<p>gp_TrsfForm</p>
+</li>
+<li>
+<p>gp_TrsfNLerp</p>
+</li>
+<li>
+<p>gp_Vec2d</p>
+</li>
+<li>
+<p>gp_Vec2f</p>
+</li>
+<li>
+<p>gp_Vec3f</p>
+</li>
+<li>
+<p>gp_VectorWithNullMagnitude</p>
+</li>
+<li>
+<p>gp_XY</p>
+</li>
+</ul>
 <p>Some &ldquo;sugar&rdquo; is added for this package:</p>
 <ol>
 <li>You can mix floats and integers while defining the points.</li>
 <li>You can assign values like <code>pnt.x = 8</code> and get the value with: <code>echo pnt.x</code></li>
 <li>The same applies with: <code>pnt[0] = 8</code>  and <code>echo pnt[0]</code></li>
 </ol>
-<p>For example, <a href="">examples/ex02_pnt.nim</a>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
-<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">sugar</span>  <span style="color:#8f5902;font-style:italic"># Provides: `dup`</span>
 
-<span style="color:#8f5902;font-style:italic"># Create two point classes, with (x,y,z) coordinates (you can mix integers and floats)</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.3</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt1</span>  <span style="color:#8f5902;font-style:italic"># Shows: PNT1: Pnt(x:1.0, y:0.2000000029802322, z:2.299999952316284)</span>
-<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT2: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt2</span>  <span style="color:#8f5902;font-style:italic"># Shows: PNT2: Pnt(x:1.0, y:0.2000000029802322, z:-3.0)</span>
-
-<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.0</span>
-<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:3.0, y:0.2000000029802322, z:2.299999952316284) </span>
-
-<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span>
-<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:1.0, y:0.2000000029802322, z:2.299999952316284)</span>
-
-<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">set</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">echo</span> <span style="color:#000">pnt1</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:2.0)</span>
-
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt3</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Pnt</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000">pnt3</span><span style="color:#000;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">set</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">echo</span> <span style="color:#000">pnt3</span>            <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:-1.0, y:-2.0, z:-3.0)</span>
-
-<span style="color:#000">echo</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt3</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#ce5c00;font-weight:bold">]</span>                 <span style="color:#8f5902;font-style:italic"># Shows: -1.0 -2.0 -3.0</span>
-
-<span style="color:#000">echo</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">distance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#4e9a06">&#34; == &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">distance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>  <span style="color:#8f5902;font-style:italic"># 5.161395072937012 == 5.161395072937012</span>
-<span style="color:#000">echo</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">squareDistance</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>                          <span style="color:#8f5902;font-style:italic"># 26.63999938964844</span>
-<span style="color:#8f5902;font-style:italic">#echo pnt1.mirrored(pnt2)</span>
-<span style="color:#8f5902;font-style:italic"># Note: in Nim the aim is to make everything in place and to use dup otherwise</span>
-<span style="color:#8f5902;font-style:italic"># https://nim-lang.org/blog/2020/04/03/version-120-released.html#dup</span>
-<span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">mirror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>                   <span style="color:#8f5902;font-style:italic"># Pnt1 mirrored with regard to Pnt2</span>
-<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt1</span>                 <span style="color:#8f5902;font-style:italic"># Shows: PNT1: Pnt(x:2.0, y:-0.6000000238418579, z:-8.0)</span>
-
-<span style="color:#8f5902;font-style:italic"># Note: with Nim&#39;s dup, there is no need for opencascade &#34;mirrored&#34; version of of &#34;mirror&#34;.  </span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">pnt4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">dup</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">mirror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>   <span style="color:#8f5902;font-style:italic"># This would be equivalent to Mirrored: https://forum.nim-lang.org/t/7240; we will get the original Pnt1</span>
-<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;PNT4: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pnt4</span>                 <span style="color:#8f5902;font-style:italic"># Shows: PNT4: Pnt(x:0.0, y:1.0, z:2.0)          </span>
-
-<span style="color:#000">pnt4</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.0</span>
-<span style="color:#000">echo</span> <span style="color:#000">pnt4</span>      <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:3.0)</span>
-
-<span style="color:#000">pnt4</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">2</span>
-<span style="color:#000">echo</span> <span style="color:#000">pnt4</span>      <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:-2.0)</span>
-</code></pre></div>
         <div class="section-index">
     
     
@@ -441,6 +541,32 @@ if (!doNotTrack) {
     
     
     
+    <hr class="panel-line">
+        
+            
+            <div class="entry">
+                <h5>
+                    <a href="/occt-site/docs/reference/gp/vec/">Vec</a>
+                </h5>
+                <p></p>
+            </div>
+        
+            
+            <div class="entry">
+                <h5>
+                    <a href="/occt-site/docs/reference/gp/xyz/">Xyz</a>
+                </h5>
+                <p></p>
+            </div>
+        
+            
+            <div class="entry">
+                <h5>
+                    <a href="/occt-site/docs/reference/gp/pnt/">Pnt</a>
+                </h5>
+                <p></p>
+            </div>
+        
     
 </div>
 
@@ -508,7 +634,10 @@ if (!doNotTrack) {
 		<br />
 	
 	
-	
+	<div class="text-muted mt-5 pt-3 border-top">
+  Last modified December 8, 2021: <a href="https://github.com/google/docsy-example/commit/e0c6aeb3ac0ed286a460bf709b266895a5297352">Added gp_Pnt example (e0c6aeb)</a>
+</div>
+
 </div>
 
           </main>

@@ -23,10 +23,14 @@
 
 
   
-  <meta name="description" content="Open Cascade documentation: package: gp
-Some &ldquo;sugar&rdquo; is added for this package:
+  <meta name="description" content="Open Cascade documentation: gp.
+This package provides the following:
 
-You can mix floats and integers while defining the …">
+
+Pnt: defines a 3D cartesian point.
+
+
+Xyz: describes a cartesian coordinate …">
 <meta property="og:title" content="Package: gp" />
 <meta property="og:description" content="Open Cascade bindings for Nim language" />
 <meta property="og:type" content="website" />
@@ -179,19 +183,266 @@ This the multi-page printable view of this section.
   
 
   
+    
+    
+	
+<li>1: <a href="#pg-2b452e4cf984cae72baef0aa8201e101">Vec</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-3c0a42411c5af9086fdbc995b5033655">Xyz</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-9debf3c47c7f7df260849a1af4d327be">Pnt</a></li>
+
+
+    
+  
 
     </ul>
 
 
 <div class="content">
-      <p>Open Cascade documentation: <a href="https://dev.opencascade.org/doc/refman/html/package_gp.html">package: gp</a></p>
+      <p>Open Cascade documentation: <a href="https://dev.opencascade.org/doc/refman/html/package_gp.html">gp</a>.</p>
+<p>This package provides the following:</p>
+<ul>
+<li>
+<p><a href="pnt">Pnt</a>: defines a 3D cartesian point.</p>
+</li>
+<li>
+<p><a href="xyz">Xyz</a>: describes a cartesian coordinate entity in 3D space {X,Y,Z}. This entity is used for algebraic calculation. This entity can be transformed with a &ldquo;Trsf&rdquo; or a &ldquo;GTrsf&rdquo; from package &ldquo;gp&rdquo;. It is used in vectorial computations or for holding this type of information in data structures.</p>
+</li>
+<li>
+<p><a href="vec">Vec</a>: defines a non-persistent vector in 3D space.</p>
+</li>
+<li>
+<p>gp_Ax2</p>
+</li>
+<li>
+<p>gp_Ax22d</p>
+</li>
+<li>
+<p>gp_Ax2d</p>
+</li>
+<li>
+<p>gp_Ax3</p>
+</li>
+<li>
+<p>gp_Circ</p>
+</li>
+<li>
+<p>gp_Circ2d</p>
+</li>
+<li>
+<p>gp_Cone</p>
+</li>
+<li>
+<p>gp_Cylinder</p>
+</li>
+<li>
+<p>gp_Dir</p>
+</li>
+<li>
+<p>gp_Dir2d</p>
+</li>
+<li>
+<p>gp_Elips</p>
+</li>
+<li>
+<p>gp_Elips2d</p>
+</li>
+<li>
+<p>gp_EulerSequence</p>
+</li>
+<li>
+<p>gp_GTrsf</p>
+</li>
+<li>
+<p>gp_GTrsf2d</p>
+</li>
+<li>
+<p>gp_Hypr</p>
+</li>
+<li>
+<p>gp_Hypr2d</p>
+</li>
+<li>
+<p>gp_Lin</p>
+</li>
+<li>
+<p>gp_Lin2d</p>
+</li>
+<li>
+<p>gp_Mat</p>
+</li>
+<li>
+<p>gp_Mat2d</p>
+</li>
+<li>
+<p>gp_Parab</p>
+</li>
+<li>
+<p>gp_Parab2d</p>
+</li>
+<li>
+<p>gp_Pln</p>
+</li>
+<li>
+<p>gp_Pnt2d</p>
+</li>
+<li>
+<p>gp_Quaternion</p>
+</li>
+<li>
+<p>gp_QuaternionNLerp</p>
+</li>
+<li>
+<p>gp_QuaternionSLerp</p>
+</li>
+<li>
+<p>gp_Sphere</p>
+</li>
+<li>
+<p>gp_Torus</p>
+</li>
+<li>
+<p>gp_Trsf</p>
+</li>
+<li>
+<p>gp_Trsf2d</p>
+</li>
+<li>
+<p>gp_TrsfForm</p>
+</li>
+<li>
+<p>gp_TrsfNLerp</p>
+</li>
+<li>
+<p>gp_Vec2d</p>
+</li>
+<li>
+<p>gp_Vec2f</p>
+</li>
+<li>
+<p>gp_Vec3f</p>
+</li>
+<li>
+<p>gp_VectorWithNullMagnitude</p>
+</li>
+<li>
+<p>gp_XY</p>
+</li>
+</ul>
 <p>Some &ldquo;sugar&rdquo; is added for this package:</p>
 <ol>
 <li>You can mix floats and integers while defining the points.</li>
 <li>You can assign values like <code>pnt.x = 8</code> and get the value with: <code>echo pnt.x</code></li>
 <li>The same applies with: <code>pnt[0] = 8</code>  and <code>echo pnt[0]</code></li>
 </ol>
-<p>For example, <a href="">examples/ex02_pnt.nim</a>:</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2b452e4cf984cae72baef0aa8201e101">1 - Vec</h1>
+    
+	<p>Open Cascade documentation: <a href="https://dev.opencascade.org/doc/refman/html/classgp___vec.html">gp_Vec</a>.</p>
+<p>For example, <a href="">examples/ex05_vec.nim</a>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
+
+<span style="color:#8f5902;font-style:italic"># Create two point classes, with (x,y,z) coordinates</span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">vec1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newVec</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">pnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0.0</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0.0</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">pnt2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPnt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0.0</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">vec2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newVec</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pnt1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">pnt2</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">vec2</span>       <span style="color:#8f5902;font-style:italic"># Vec(x:0.0, y:0.0, z:1.0)</span>
+<span style="color:#000">vec2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">scale</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">2.0</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">vec2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">scale</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">vec2</span>       <span style="color:#8f5902;font-style:italic"># Vec(x:0.0, y:0.0, z:12.0)</span>
+
+<span style="color:#000">vec2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">set</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">vec2</span>       <span style="color:#8f5902;font-style:italic"># Vec(x:2.0, y:3.0, z:6.0)</span>
+</code></pre></div>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3c0a42411c5af9086fdbc995b5033655">2 - Xyz</h1>
+    
+	<p>Open Cascade documentation: <a href="https://dev.opencascade.org/doc/refman/html/classgp___x_y_z.html">gp_XYZ</a></p>
+<p>For example, <a href="">examples/ex04_xyz.nim</a>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
+
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">xyz1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newXyz</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.3</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;XYZ1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">xyz1</span>                          <span style="color:#8f5902;font-style:italic"># XYZ1: Xyz(x:1.0, y:0.2000000029802322, z:2.299999952316284)</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;Modulus: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">xyz1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">modulus</span>               <span style="color:#8f5902;font-style:italic"># Modulus: 2.515949010848999</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;SquareModulus: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">xyz1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">squareModulus</span>   <span style="color:#8f5902;font-style:italic"># SquareModulus: 6.329999923706055</span>
+
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">xyz2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newXyz</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">3.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;XYZ2: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">xyz2</span>               <span style="color:#8f5902;font-style:italic"># XYZ2: Xyz(x:3.0, y:1.0, z:-1.0)</span>
+<span style="color:#000">xyz1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">add</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">xyz2</span><span style="color:#000;font-weight:bold">)</span>                    
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;XYZ1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">xyz1</span>               <span style="color:#8f5902;font-style:italic"># XYZ1: Xyz(x:4.0, y:1.200000047683716, z:1.299999952316284)</span>
+<span style="color:#000">xyz1</span> <span style="color:#ce5c00;font-weight:bold">+=</span> <span style="color:#000">xyz2</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;XYZ1: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">xyz1</span>               <span style="color:#8f5902;font-style:italic"># XYZ1: Xyz(x:7.0, y:2.200000047683716, z:0.2999999523162842)</span>
+
+<span style="color:#000">xyz1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newXyz</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>  <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span>           
+<span style="color:#000">xyz2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newXyz</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>  <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">xyz1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cross</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">xyz2</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">echo</span> <span style="color:#000">xyz1</span>                         <span style="color:#8f5902;font-style:italic"># Xyz(x:0.0, y:0.0, z:1.0)</span>
+<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;SUM: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">xyz1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; + &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">xyz2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; = &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">xyz1</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">xyz2</span>   <span style="color:#8f5902;font-style:italic"># SUM: Xyz(x:0.0, y:0.0, z:1.0) + Xyz(x:0.0, y:1.0, z:0.0) = Xyz(x:0.0, y:1.0, z:1.0)</span>
+</code></pre></div>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9debf3c47c7f7df260849a1af4d327be">3 - Pnt</h1>
+    
+	<p>For example, <a href="">examples/ex02_pnt.nim</a>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
 <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">sugar</span>  <span style="color:#8f5902;font-style:italic"># Provides: `dup`</span>
 
@@ -235,17 +486,11 @@ This the multi-page printable view of this section.
 <span style="color:#000">echo</span> <span style="color:#000">pnt4</span>      <span style="color:#8f5902;font-style:italic"># Shows: Pnt(x:0.0, y:1.0, z:-2.0)</span>
 </code></pre></div>
 </div>
-</div>
 
 
-  
-  
-  
-  
 
-  
-  
-
+    
+	
   
 
 
