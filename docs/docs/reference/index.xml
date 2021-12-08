@@ -14,6 +14,41 @@
     
     
     <item>
+      <title>Docs: About Open Cascade</title>
+      <link>https://mantielero.github.io/occt-site/docs/reference/about-open-cascade/</link>
+      <pubDate>Wed, 08 Dec 2021 10:43:43 +0100</pubDate>
+      
+      <guid>https://mantielero.github.io/occt-site/docs/reference/about-open-cascade/</guid>
+      <description>
+        
+        
+        &lt;p&gt;OpenCascade is organized in different &lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/index.html&#34;&gt;modules&lt;/a&gt; (alphabetic order):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/module_applicationframework.html&#34;&gt;ApplicationFramework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/module_dataexchange.html&#34;&gt;DataExchange&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/module_draw.html&#34;&gt;Draw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/module_foundationclasses.html&#34;&gt;FoundationClasses&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/module_modelingalgorithms.html&#34;&gt;ModelingAlgorithms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/module_modelingdata.html&#34;&gt;ModelingData&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/module_visualization.html&#34;&gt;Visualization&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Each module contain a number of toolkits (TK). For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/module_foundationclasses.html&#34;&gt;FoundationClasses&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/toolkit_tkernel.html&#34;&gt;tkernel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/toolkit_tkmath.html&#34;&gt;tkmath&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Each toolkit contains a number of packages as seen for &lt;a href=&#34;https://dev.opencascade.org/doc/refman/html/toolkit_tkernel.html&#34;&gt;tkernel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So OpenCascade is huge (beyond 7600 headers).&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Parameter Reference</title>
       <link>https://mantielero.github.io/occt-site/docs/reference/parameter-reference/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>

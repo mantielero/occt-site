@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>occt.nim – About Goldydocs</title>
+    <title>occt.nim – About occt.nim</title>
     <link>https://mantielero.github.io/occt-site/about/</link>
-    <description>Recent content in About Goldydocs on occt.nim</description>
+    <description>Recent content in About occt.nim on occt.nim</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="https://mantielero.github.io/occt-site/about/index.xml" rel="self" type="application/rss+xml" />

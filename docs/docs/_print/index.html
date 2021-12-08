@@ -398,7 +398,15 @@ This the multi-page printable view of this section.
     
     
 	
-<li>7.1: <a href="#pg-fae1ff8e3c30cfdbe85045f64e0a7b36">Parameter Reference</a></li>
+<li>7.1: <a href="#pg-dd19dff0f4fb8d2626c859c6c67db8ae">About Open Cascade</a></li>
+
+
+    
+  
+    
+    
+	
+<li>7.2: <a href="#pg-fae1ff8e3c30cfdbe85045f64e0a7b36">Parameter Reference</a></li>
 
 
     
@@ -424,6 +432,14 @@ This the multi-page printable view of this section.
   
 
     </ul>
+    
+  
+    
+    
+	
+<li>9: <a href="#pg-45b90ebf406e018616152bf90dbdea73">Introduction</a></li>
+
+
     
   
 
@@ -3340,7 +3356,46 @@ Javadoc, or other doc generation tools by putting them in your <code>static/</co
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-fae1ff8e3c30cfdbe85045f64e0a7b36">7.1 - Parameter Reference</h1>
+	<h1 id="pg-dd19dff0f4fb8d2626c859c6c67db8ae">7.1 - About Open Cascade</h1>
+    
+	<p>OpenCascade is organized in different <a href="https://dev.opencascade.org/doc/refman/html/index.html">modules</a> (alphabetic order):</p>
+<ul>
+<li><a href="https://dev.opencascade.org/doc/refman/html/module_applicationframework.html">ApplicationFramework</a></li>
+<li><a href="https://dev.opencascade.org/doc/refman/html/module_dataexchange.html">DataExchange</a></li>
+<li><a href="https://dev.opencascade.org/doc/refman/html/module_draw.html">Draw</a></li>
+<li><a href="https://dev.opencascade.org/doc/refman/html/module_foundationclasses.html">FoundationClasses</a></li>
+<li><a href="https://dev.opencascade.org/doc/refman/html/module_modelingalgorithms.html">ModelingAlgorithms</a></li>
+<li><a href="https://dev.opencascade.org/doc/refman/html/module_modelingdata.html">ModelingData</a></li>
+<li><a href="https://dev.opencascade.org/doc/refman/html/module_visualization.html">Visualization</a></li>
+</ul>
+<p>Each module contain a number of toolkits (TK). For example:</p>
+<ul>
+<li><a href="https://dev.opencascade.org/doc/refman/html/module_foundationclasses.html">FoundationClasses</a>
+<ul>
+<li><a href="https://dev.opencascade.org/doc/refman/html/toolkit_tkernel.html">tkernel</a></li>
+<li><a href="https://dev.opencascade.org/doc/refman/html/toolkit_tkmath.html">tkmath</a></li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<p>Each toolkit contains a number of packages as seen for <a href="https://dev.opencascade.org/doc/refman/html/toolkit_tkernel.html">tkernel</a>.</p>
+<p>So OpenCascade is huge (beyond 7600 headers).</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fae1ff8e3c30cfdbe85045f64e0a7b36">7.2 - Parameter Reference</h1>
     <div class="lead">A short lead description about this content page. It can be <strong>bold</strong> or <em>italic</em> and can be split over multiple paragraphs.</div>
 	
 
@@ -3744,6 +3799,319 @@ changes up to your fork, and create a pull request.</p>
     
 	
   
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-45b90ebf406e018616152bf90dbdea73">9 - Introduction</h1>
+    
+	<h1 id="development">Development</h1>
+<h2 id="wrapping-process">Wrapping process</h2>
+<p>We are wrapping C++ code here. In order to quickly play with the code, the shorter path is using <a href="https://github.com/n0bra1n3r/cinterop">cinterop</a>. In order to create proper bindings, it is better to use <a href="https://github.com/nim-lang/c2nim">c2nim</a>.</p>
+<p>The <code>src/wrapper</code> folder contains the bindings to opencascade. It contains the different toolkits. Within each toolkit folder, there are folders for each package. For each package, two files are created:</p>
+<ul>
+<li><code>gen.nims</code>: this script is the one that creates a <code>.nim</code> file for each header file considered as part of the package. It can perform some preprocessing (modifying a copy of the header file to enable its processing by <code>c2nim</code>) and postprocessing (modifying the generated <code>.nim</code> file once generated).</li>
+<li><code>&lt;package&gt;.c2nim</code>: this contains the information needed by <code>c2nim</code> in order to process the file.</li>
+</ul>
+<p>Besides, <code>src/wrapper/generate.nims</code> can execute all the <code>gen.nims</code> files existing in each folder. This file also replace the <code>dynlib</code> pragmas by <code>header</code> ones, because there seem to be a problem with <code>dynlib</code> in C++.</p>
+<h3 id="how-to-do-it">How to do it</h3>
+<p>Currently working on: <code>./src/wrapper/</code></p>
+<p>In particular in: <code>tkgeombase/extrema</code>:</p>
+<ul>
+<li>
+<p><code>gen.nims</code>:</p>
+<ul>
+<li>change: <code>let packageName = &quot;...&quot;</code></li>
+<li>replace the <code>genFiles</code> with the appropriate files. Find out the files by means of <code>ls /usr/include/opencascade/Extrema*.hxx | cut -c 26-</code></li>
+</ul>
+</li>
+<li>
+<p><code>extrema.c2nim</code></p>
+<ul>
+<li>modify the <code>#dynlib ...</code> so that it refers to the toolkit.</li>
+</ul>
+</li>
+</ul>
+<p>Run the <code>gen.nims</code> until it works. If it fails, you might need to comment lines in the header, by adding something like: <code>genFiles( &quot;filename.hxx&quot;, comment = @[(25, 30)])</code>.</p>
+<p>In order to include all the new files created, just go to the corresponding <em>toolkit</em> file. For example, <code>./experiments/wrapper2/tkgeombase/tkgeombase.nim</code> and include <code>extrema</code> by adding: <code>include extrema/extrema_includes</code></p>
+<p>Check that everything is fine by running for example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ nim cpp ex04_tkmath
+</code></pre></div><p>If an error like <code>inheritance only works with non-final objects</code> appears, it means that the corresponding object needs to be defined as: <code>... = object of RootObj</code>. That modification is done by means of the <code>gen.nims</code> file. By means of something like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#000">pp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;extrema_ponsurf.nim&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#000">replaceAll</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">@[</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;bycopy.} = object&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;bycopy.} = object of RootObj&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><blockquote>
+<p><code>pp</code> stands for Post Processing.</p>
+</blockquote>
+<h3 id="example-standard-packagehttpsdevopencascadeorgdocrefmanhtmlpackage_standardhtml">Example: <a href="https://dev.opencascade.org/doc/refman/html/package_standard.html">Standard package</a></h3>
+<p>There are cases where the bindings will be created without any issue:</p>
+<pre tabindex="0"><code>$ c2nim --cpp --header --strict --out:standard.nim /usr/include/opencascade/Standard.hxx
+/usr/include/opencascade/Standard.hxx(94, 1) Warning: comment ' _Standard_HeaderFile' ignored [CommentXIgnored]
+Hint: operation successful (94 lines compiled; 1 millisecond, 24 microseconds, and 983 nanoseconds sec total; 3.012MiB; ) [SuccessX]
+</code></pre><p>But this doesn&rsquo;t mean that this is what you want/need. By inspecting the file, we see that there are plenty of <code>Standard_EXPORT</code>, macros that have not been transformed (like <code>DEFINE_STANDARD_ALLOC</code>), &hellip; Besides, we might be interested in the type, but not in the method. So we might need to pre-process or post-process the header.</p>
+<h4 id="dealing-with-macros">Dealing with macros</h4>
+<p>We can find where is defined the <code>DEFINE_STANDARD_ALLOC</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grep <span style="color:#4e9a06">&#34;define DEFINE_STANDARD_ALLOC&#34;</span> /usr/include/opencascade/*.hxx
+</code></pre></div><p>It is defined in <code>Standard_DefineAlloc.hxx</code>.</p>
+<p>We can create a file where we define what we do with the macro. For instance:</p>
+<ul>
+<li>Option 1: we can use exactly the same specification:
+<strong>occt.c2nim</strong></li>
+</ul>
+<pre tabindex="0"><code>#ifdef C2NIM
+# define DEFINE_STANDARD_ALLOC                                         \
+  void* operator new (size_t theSize)                                  \
+  {                                                                    \
+    return Standard::Allocate (theSize);                               \
+  }                                                                    \
+  void  operator delete (void* theAddress)                             \
+  {                                                                    \
+    Standard::Free (theAddress);                                       \
+  }                                                                    \
+  DEFINE_STANDARD_ALLOC_ARRAY                                          \
+  DEFINE_STANDARD_ALLOC_PLACEMENT
+#endif
+</code></pre><ul>
+<li>Option 2: we don&rsquo;t care about the bodies; we are only interested in the headers
+<strong>occt.c2nim</strong></li>
+</ul>
+<pre tabindex="0"><code>#ifdef C2NIM
+# define DEFINE_STANDARD_ALLOC               \
+  void* operator new (size_t theSize);       \
+  void  operator delete (void* theAddress);  \
+  DEFINE_STANDARD_ALLOC_ARRAY                \
+  DEFINE_STANDARD_ALLOC_PLACEMENT
+#endif
+</code></pre><ul>
+<li>Option 3: we don&rsquo;t plan to use the functions that the macros are introducing:
+<strong>occt.c2nim</strong></li>
+</ul>
+<pre tabindex="0"><code>#ifdef C2NIM
+# define DEFINE_STANDARD_ALLOC
+#endif
+</code></pre><h4 id="standard_export">Standard_EXPORT</h4>
+<p>It is defined in <code>Standard_Macro.hxx</code>. We can safely add:</p>
+<pre tabindex="0"><code>#ifdef C2NIM
+# define DEFINE_STANDARD_ALLOC
+# define Standard_EXPORT
+#endif
+</code></pre><h4 id="generate-the-bindings">Generate the bindings</h4>
+<p>In this case, we would execute:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ c2nim --cpp --header --strict --out:standard.nim occt.c2nim /usr/include/opencascade/Standard.hxx
+</code></pre></div><p>and we will get a better binding.</p>
+<p>And so on with: <code>Standard_Size</code>, `Standard_Address``.</p>
+<h2 id="how-to-add-a-new-package">How to add a new package?</h2>
+<ol>
+<li>Create the folder structure. For example: <code>tkmath/gp</code>.</li>
+<li>We need a <code>.c2nim</code> file. For example, we can copy the one from another package into <code>gp.c2nim</code>.</li>
+<li>We will create a <code>gen.nims</code>. This file will be responsible of creating the bindings. We can take it from another package. Then we will call <code>genFiles(&lt;whatever&gt;)</code> for each header in the package. In order to get all the headers in the package we can use something like:</li>
+</ol>
+<pre tabindex="0"><code>$ ls /usr/include/opencascade/gp*.hxx | cut -c 26-
+</code></pre><ol start="4">
+<li>We will have something like this:</li>
+</ol>
+<pre tabindex="0"><code>genFiles(&quot;gp_Ax1&quot;)
+genFiles(&quot;gp_Ax22d&quot;)
+genFiles(&quot;gp_Ax2d&quot;)
+genFiles(&quot;gp_Ax2&quot;)
+...
+</code></pre><ol start="5">
+<li>Modify the beginning of the file.</li>
+</ol>
+<pre tabindex="0"><code>let c2nimFile = &quot;gp.c2nim&quot;
+</code></pre><ol start="6">
+<li>Adjust the last block which creates file including all the binding files:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">txt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">files</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">listFiles</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;./&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">files</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">sort</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">path</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#000">files</span><span style="color:#000;font-weight:bold">:</span>
+  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dir</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">name</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ext</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">splitFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">)</span>
+
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">ext</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#4e9a06">&#34;.nim&#34;</span> <span style="color:#204a87;font-weight:bold">and</span> <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#4e9a06">&#34;gen&#34;</span> <span style="color:#204a87;font-weight:bold">and</span> <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#4e9a06">&#34;gp_includes&#34;</span><span style="color:#000;font-weight:bold">:</span>
+    <span style="color:#000">txt</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;include &#34;</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#4e9a06">&#34;</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span>
+    <span style="color:#8f5902;font-style:italic">#exp &amp;= name &amp; &#34;, &#34;</span>
+  <span style="color:#8f5902;font-style:italic">#txt &amp;= exp</span>
+
+
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;{.passL:</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">-lTKMath</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">.}</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span>
+<span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;{.passC:</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">-I&#34;</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">lib</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#4e9a06">&#34;</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> .}</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span>
+<span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;{.experimental: </span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">codeReordering</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">.}</span><span style="color:#4e9a06">\n\n</span><span style="color:#4e9a06">&#34;</span>
+<span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;&#34;&#34;
+</span><span style="color:#4e9a06">when defined(windows):
+</span><span style="color:#4e9a06">  const tkernel* = &#34;TKMath.dll&#34;
+</span><span style="color:#4e9a06">elif defined(macosx):
+</span><span style="color:#4e9a06">  const tkernel* = &#34;libTKMath.dylib&#34;
+</span><span style="color:#4e9a06">else:
+</span><span style="color:#4e9a06">  const tkernel* = &#34;libTKMath.so&#34; 
+</span><span style="color:#4e9a06">
+</span><span style="color:#4e9a06">
+</span><span style="color:#4e9a06">&#34;&#34;&#34;</span>
+
+<span style="color:#000">writeFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;gp_includes.nim&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">txt</span> <span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">pp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;gp_includes.nim&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><ol start="7">
+<li>Start executing <code>gen.nims</code> until it fully works. You will have to:</li>
+</ol>
+<p>a. Modify the <code>.c2nim</code> file
+b. Modify <code>genFiles</code> you can <code>remove</code> lines. It can be interesting to remove the function body: remove lines of the body and then add the semicolon with <code>addSemiColon</code>. But it is easier using: <code>removeFuncBody</code>. It might be interesting to comment the line <code>rmFile(name &amp; &quot;.hxx&quot;)</code> in order to inspect the modified headers that are left in the folder. You can also replace strings by means <code>replaceAll</code>.
+c. Postprocess the results using <code>pp</code>. Commenting lines in the header by means of <code>comment</code> or <code>commentRange</code></p>
+<h2 id="overview">Overview</h2>
+<ul>
+<li>Geom: The Geom package implements 3D geometric objects: elementary curves and surfaces are provided as well as more complex ones (such as Bezier and BSpline). The Geom package provides only the data structure of geometric entities. You can directly instantiate classes belonging to Geom, but it is easier to compute elementary curves and surfaces by using the GC package.</li>
+<li><a href="https://old.opencascade.com/doc/occt-7.3.0/refman/html/package_gc.html">GC</a></li>
+</ul>
+<p>Graphic3d
+HLR Algo/BRep&hellip;
+IF
+IGES
+IMesh / IVtk
+MAT
+MEsh
+NCollection
+OSD
+OpenGl
+RWStep
+STEP
+Standard
+Std
+Storage
+TCol
+TDF
+TopoDS</p>
+<pre tabindex="0"><code>from OCCT.BRep import BRep_Builder
+from OCCT.BRepTools import BRepTools
+from OCCT.IGESControl import IGESControl_Reader, IGESControl_Writer
+from OCCT.STEPControl import (STEPControl_Reader, STEPControl_Writer,
+                              STEPControl_AsIs)
+from OCCT.TopoDS import TopoDS_Shape
+</code></pre><p><a href="https://github.com/FreeCAD/FreeCAD/blob/master/src/Mod/Part/App/ImportStep.cpp">https://github.com/FreeCAD/FreeCAD/blob/master/src/Mod/Part/App/ImportStep.cpp</a>
+<a href="https://old.opencascade.com/doc/occt-7.3.0/overview/html/occt__tutorial.html#sec6">https://old.opencascade.com/doc/occt-7.3.0/overview/html/occt__tutorial.html#sec6</a></p>
+<p><a href="https://github.com/lvk88/OccTutorial">https://github.com/lvk88/OccTutorial</a>
+<a href="https://github.com/lvk88/OccTutorial/blob/master/Chapter1_Basics/runners/chapter1_1.cpp">https://github.com/lvk88/OccTutorial/blob/master/Chapter1_Basics/runners/chapter1_1.cpp</a>
+<a href="https://github.com/tpaviot/pythonocc-demos/tree/master/examples">https://github.com/tpaviot/pythonocc-demos/tree/master/examples</a></p>
+<h2 id="ncollection">NCollection</h2>
+<p>Creo que podrían ser innecesarios. Parece que es mejor usar arrays o secuencias de Nim.</p>
+<h2 id="handles">HANDLES</h2>
+<p>In line 60, we create a so-called Handle to an array. What are they good for? If you really want to pass around arrays between functions, but you are not allowed to pass them by value, you have another choice: use pointers instead! But the usage of raw pointers comes with its own problems: you have to decide when it gets deleted, who is responsible for deleting it, you have to take care that you don’t try to access already deleted pointers, etc… That’s why OpenCASCADE uses the nice concept of Handles, a.k.a. smart pointers (or shared_ptr-s more or less for Boost or C++11 users). Handles can be used just like ordinary pointers, with a very important difference that you don’t have to worry too much about deleting them or thinking about who owns them. They take care of their own reference counting, and when there is no more object referring to them, they just simply get destroyed. Of course, containers are not the only things that can be operated on by Handles: actually, in the higher-level packages many objects use them.</p>
+<h2 id="todo">TODO</h2>
+<p>Take a look at <a href="https://buildmedia.readthedocs.org/media/pdf/pyocct/latest/pyocct.pdf">pyocct.pdf</a></p>
+<p>pyOcct seem to cover:</p>
+<ul>
+<li>AIS</li>
+<li>BRepAlgoAPI</li>
+<li>BRepPrimAPI</li>
+<li>Font</li>
+<li>Geom</li>
+<li>Graphic3d</li>
+<li>InteractiveObject</li>
+<li>OpenGl</li>
+<li>Select3d</li>
+<li>ShapeAnalysis</li>
+<li>Standard</li>
+<li>TColgp</li>
+<li>TDocStd</li>
+<li>TopoDS</li>
+<li>V3d</li>
+<li>XCAFDoc</li>
+</ul>
+<h2 id="todo-1">TODO</h2>
+<ul>
+<li>
+<p><input checked="" disabled="" type="checkbox"> Standard/Standard_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> NCollection/NCollection_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> gp/gp_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> Geom/Geom_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> Geom2d/Geom2d_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> GC/GC_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> TopoDS/TopoDS_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> BRepBuilderAPI/BRepBuilderAPI_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> BRepPrim/BRepPrim_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> BRepPrimAPI/BRepPrimAPI_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> BRepFilletAPI/BRepFilletAPI_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> ChFi3d/ChFi3d_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> BRep/BRep_includes</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> BRepSweep/BRepSweep_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> TopLoc/TopLoc_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> TopAbs/TopAbs_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> TopExp/TopExp_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> TopTools/TopTools_includes</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> BRepAlgo/BRepAlgo_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> GeomAbs/GeomAbs_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> Adaptor2d/Adaptor2d_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> Adaptor3d/Adaptor3d_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> STEPControl/STEPControl_includes</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> StepData/StepData_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> Transfer/Transfer_includes</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> XSControl/XSControl_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> Interface/Interface_includes</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> IFSelect/IFSelect_includes</p>
+</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
 
 
 
@@ -3816,7 +4184,7 @@ changes up to your fork, and create a pull request.</p>
         <small class="text-white">&copy; 2021 The Docsy Authors All Rights Reserved</small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></small>
 	
-		<p class="mt-2"><a href="/occt-site/about/">About Goldydocs</a></p>
+		<p class="mt-2"><a href="/occt-site/about/">About occt.nim</a></p>
 	
       </div>
     </div>
