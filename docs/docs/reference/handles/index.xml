@@ -1,0 +1,18 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>occt.nim – Handles</title>
+    <link>https://mantielero.github.io/occt-site/docs/reference/handles/</link>
+    <description>Recent content in Handles on occt.nim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 11 Dec 2021 09:41:08 +0100</lastBuildDate>
+    
+	  <atom:link href="https://mantielero.github.io/occt-site/docs/reference/handles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>
