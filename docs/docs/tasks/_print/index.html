@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.89.4" /><link rel="canonical" type="text/html" href="https://mantielero.github.io/occt-site/docs/tasks/">
+<meta name="generator" content="Hugo 0.109.0"><link rel="canonical" type="text/html" href="https://mantielero.github.io/occt-site/docs/tasks/">
 <link rel="alternate" type="application/rss&#43;xml" href="https://mantielero.github.io/occt-site/docs/tasks/index.xml">
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -29,7 +29,6 @@
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://mantielero.github.io/occt-site/docs/tasks/" /><meta property="og:site_name" content="occt.nim" />
-
 <meta itemprop="name" content="Core Tasks">
 <meta itemprop="description" content="What can your user do with your project?
 "><meta name="twitter:card" content="summary"/>
@@ -40,8 +39,8 @@
 
 
 
-<link rel="preload" href="/occt-site/scss/main.min.77ad8086257c5b04aec72128f0eebde3c7c6696b921b68c53e5e0d3f187d0a84.css" as="style">
-<link href="/occt-site/scss/main.min.77ad8086257c5b04aec72128f0eebde3c7c6696b921b68c53e5e0d3f187d0a84.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/occt-site/scss/main.scss" as="style">
+<link href="/occt-site/scss/main.scss" rel="stylesheet" integrity="">
 
 
 <script
@@ -254,7 +253,7 @@ This the multi-page printable view of this section.
 <p>You can give each task a page, or you can group related tasks together in a page, such as tasks related to a particular feature. As well as grouping related tasks in single pages, you can also group task pages in nested folders with an index page as an overview, as seen in this example site. Or if you have a small docset like the <a href="https://docsy.dev/docs/">Docsy User Guide</a> with no Tutorials or Concepts pages, consider adding your feature-specific pages at the top level of your docs rather than in a Tasks section.</p>
 <p>Each task should give the user</p>
 <ul>
-<li>The prerequisites for this task, if any (this can be specified at the top of a multi-task page if they&rsquo;re the same for all the page&rsquo;s tasks. &ldquo;All these tasks assume that you understand&hellip;.and that you have already&hellip;.&quot;).</li>
+<li>The prerequisites for this task, if any (this can be specified at the top of a multi-task page if they&rsquo;re the same for all the page&rsquo;s tasks. &ldquo;All these tasks assume that you understand&hellip;.and that you have already&hellip;.&rdquo;).</li>
 <li>What this task accomplishes.</li>
 <li>Instructions for the task. If it involves editing a file, running a command, or writing code, provide code-formatted example snippets to show the user what to do! If there are multiple steps, provide them as a numbered list.</li>
 <li>If appropriate, links to related concept, tutorial, or example pages.</li>
@@ -449,7 +448,7 @@ This the multi-page printable view of this section.
 <td>1982</td>
 <td>Epic Records</td>
 <td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical</td>
-<td>Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
+<td>Wanna Be Startin&rsquo; Somethin&rsquo;, Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
 </tr>
 <tr>
 <td>Prince</td>
@@ -473,23 +472,23 @@ This the multi-page printable view of this section.
 <p>Code snippets like <code>var foo = &quot;bar&quot;;</code> can be shown inline.</p>
 <p>Also, <code>this should vertically align</code> <del><code>with this</code></del> <del>and this</del>.</p>
 <p>Code can also be shown in a block element.</p>
-<pre tabindex="0"><code>foo := &quot;bar&quot;;
-bar := &quot;foo&quot;;
+<pre tabindex="0"><code>foo := &#34;bar&#34;;
+bar := &#34;foo&#34;;
 </code></pre><p>Code can also use syntax highlighting.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
-
-  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
-
-  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
-  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
-
-  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 </code></pre><p>Inline code inside table cells should still be distinguishable.</p>
 <table>
 <thead>
@@ -766,7 +765,7 @@ bar := &quot;foo&quot;;
 <td>1982</td>
 <td>Epic Records</td>
 <td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical</td>
-<td>Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
+<td>Wanna Be Startin&rsquo; Somethin&rsquo;, Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
 </tr>
 <tr>
 <td>Prince</td>
@@ -790,23 +789,23 @@ bar := &quot;foo&quot;;
 <p>Code snippets like <code>var foo = &quot;bar&quot;;</code> can be shown inline.</p>
 <p>Also, <code>this should vertically align</code> <del><code>with this</code></del> <del>and this</del>.</p>
 <p>Code can also be shown in a block element.</p>
-<pre tabindex="0"><code>foo := &quot;bar&quot;;
-bar := &quot;foo&quot;;
+<pre tabindex="0"><code>foo := &#34;bar&#34;;
+bar := &#34;foo&#34;;
 </code></pre><p>Code can also use syntax highlighting.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
-
-  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
-
-  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
-  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
-
-  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 </code></pre><p>Inline code inside table cells should still be distinguishable.</p>
 <table>
 <thead>
@@ -1083,7 +1082,7 @@ bar := &quot;foo&quot;;
 <td>1982</td>
 <td>Epic Records</td>
 <td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical</td>
-<td>Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
+<td>Wanna Be Startin&rsquo; Somethin&rsquo;, Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
 </tr>
 <tr>
 <td>Prince</td>
@@ -1107,23 +1106,23 @@ bar := &quot;foo&quot;;
 <p>Code snippets like <code>var foo = &quot;bar&quot;;</code> can be shown inline.</p>
 <p>Also, <code>this should vertically align</code> <del><code>with this</code></del> <del>and this</del>.</p>
 <p>Code can also be shown in a block element.</p>
-<pre tabindex="0"><code>foo := &quot;bar&quot;;
-bar := &quot;foo&quot;;
+<pre tabindex="0"><code>foo := &#34;bar&#34;;
+bar := &#34;foo&#34;;
 </code></pre><p>Code can also use syntax highlighting.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
-
-  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
-
-  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
-  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
-
-  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 </code></pre><p>Inline code inside table cells should still be distinguishable.</p>
 <table>
 <thead>
@@ -1433,7 +1432,7 @@ bar := &quot;foo&quot;;
 <td>1982</td>
 <td>Epic Records</td>
 <td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical</td>
-<td>Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
+<td>Wanna Be Startin&rsquo; Somethin&rsquo;, Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
 </tr>
 <tr>
 <td>Prince</td>
@@ -1457,23 +1456,23 @@ bar := &quot;foo&quot;;
 <p>Code snippets like <code>var foo = &quot;bar&quot;;</code> can be shown inline.</p>
 <p>Also, <code>this should vertically align</code> <del><code>with this</code></del> <del>and this</del>.</p>
 <p>Code can also be shown in a block element.</p>
-<pre tabindex="0"><code>foo := &quot;bar&quot;;
-bar := &quot;foo&quot;;
+<pre tabindex="0"><code>foo := &#34;bar&#34;;
+bar := &#34;foo&#34;;
 </code></pre><p>Code can also use syntax highlighting.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
-
-  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
-
-  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
-  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
-
-  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 </code></pre><p>Inline code inside table cells should still be distinguishable.</p>
 <table>
 <thead>
@@ -1750,7 +1749,7 @@ bar := &quot;foo&quot;;
 <td>1982</td>
 <td>Epic Records</td>
 <td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical</td>
-<td>Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
+<td>Wanna Be Startin&rsquo; Somethin&rsquo;, Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
 </tr>
 <tr>
 <td>Prince</td>
@@ -1774,23 +1773,23 @@ bar := &quot;foo&quot;;
 <p>Code snippets like <code>var foo = &quot;bar&quot;;</code> can be shown inline.</p>
 <p>Also, <code>this should vertically align</code> <del><code>with this</code></del> <del>and this</del>.</p>
 <p>Code can also be shown in a block element.</p>
-<pre tabindex="0"><code>foo := &quot;bar&quot;;
-bar := &quot;foo&quot;;
+<pre tabindex="0"><code>foo := &#34;bar&#34;;
+bar := &#34;foo&#34;;
 </code></pre><p>Code can also use syntax highlighting.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
-
-  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
-
-  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
-  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
-
-  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 </code></pre><p>Inline code inside table cells should still be distinguishable.</p>
 <table>
 <thead>
@@ -1964,7 +1963,7 @@ bar := &quot;foo&quot;;
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 The Docsy Authors All Rights Reserved</small>
+        <small class="text-white">&copy; 2023 The Docsy Authors All Rights Reserved</small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></small>
 	
 		<p class="mt-2"><a href="/occt-site/about/">About occt.nim</a></p>
@@ -1983,7 +1982,7 @@ bar := &quot;foo&quot;;
 
 
 
-<script src='/occt-site/js/tabpane-persist.js'></script>
+<script src='/js/tabpane-persist.js'></script>
 
 
 
@@ -2001,7 +2000,7 @@ bar := &quot;foo&quot;;
 
 
 
-<script src="/occt-site/js/main.min.5bc9aa188f004c02c80bec0abb8ef641bc030e5fb9aad2b35fb2d4917a0b9e66.js" integrity="sha256-W8mqGI8ATALIC&#43;wKu472QbwDDl&#43;5qtKzX7LUkXoLnmY=" crossorigin="anonymous"></script>
+<script src="/occt-site/js/main.min.4323fcbdba12f611a341b8523c3692bcb1190ede33daa6799b5a20aa62c546e5.js" integrity="sha256-QyP8vboS9hGjQbhSPDaSvLEZDt4z2qZ5m1ogqmLFRuU=" crossorigin="anonymous"></script>
 
 
 

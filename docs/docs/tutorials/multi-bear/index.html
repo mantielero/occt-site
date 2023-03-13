@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.89.4" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.109.0"><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/occt-site/favicons/favicon.ico" >
@@ -29,7 +29,6 @@
 <meta property="og:url" content="https://mantielero.github.io/occt-site/docs/tutorials/multi-bear/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2017-01-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-12-08T00:07:56+01:00" /><meta property="og:site_name" content="occt.nim" />
-
 <meta itemprop="name" content="Multi-Bear Domicile Setup">
 <meta itemprop="description" content="A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
 "><meta itemprop="datePublished" content="2017-01-05T00:00:00+00:00" />
@@ -43,8 +42,8 @@
 
 
 
-<link rel="preload" href="/occt-site/scss/main.min.77ad8086257c5b04aec72128f0eebde3c7c6696b921b68c53e5e0d3f187d0a84.css" as="style">
-<link href="/occt-site/scss/main.min.77ad8086257c5b04aec72128f0eebde3c7c6696b921b68c53e5e0d3f187d0a84.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/occt-site/scss/main.scss" as="style">
+<link href="/occt-site/scss/main.scss" rel="stylesheet" integrity="">
 
 
 <script
@@ -198,7 +197,7 @@ if (!doNotTrack) {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-occt-sitedocstutorials-li">
   <a href="/occt-site/docs/tutorials/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocstutorials"><span class="">Tutorials</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-occt-sitedocstutorialsmulti-bear-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocstutorialsmulti-bear-li">
   <a href="/occt-site/docs/tutorials/multi-bear/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocstutorialsmulti-bear"><span class="td-sidebar-nav-active-item">Multi-Bear Domicile Setup</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocstutorialstutorial2-li">
   <a href="/occt-site/docs/tutorials/tutorial2/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-occt-sitedocstutorialstutorial2"><span class="">Another Tutorial</span></a>
@@ -589,7 +588,7 @@ if (!doNotTrack) {
 <td>1982</td>
 <td>Epic Records</td>
 <td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical</td>
-<td>Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
+<td>Wanna Be Startin&rsquo; Somethin&rsquo;, Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
 </tr>
 <tr>
 <td>Prince</td>
@@ -613,23 +612,23 @@ if (!doNotTrack) {
 <p>Code snippets like <code>var foo = &quot;bar&quot;;</code> can be shown inline.</p>
 <p>Also, <code>this should vertically align</code> <del><code>with this</code></del> <del>and this</del>.</p>
 <p>Code can also be shown in a block element.</p>
-<pre tabindex="0"><code>foo := &quot;bar&quot;;
-bar := &quot;foo&quot;;
+<pre tabindex="0"><code>foo := &#34;bar&#34;;
+bar := &#34;foo&#34;;
 </code></pre><p>Code can also use syntax highlighting.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
-
-  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
-
-  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
-  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
-
-  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">input</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">`var foo = &#34;bar&#34;;`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">lexer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexers</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">lexer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Tokenise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nil</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">input</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">style</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">styles</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;github&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">New</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">html</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithLineNumbers</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">buff</span> <span style="color:#000">bytes</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Buffer</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">formatter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Format</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">style</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">iterator</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buff</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><pre tabindex="0"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 </code></pre><p>Inline code inside table cells should still be distinguishable.</p>
 <table>
 <thead>
@@ -860,7 +859,7 @@ bar := &quot;foo&quot;;
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 The Docsy Authors All Rights Reserved</small>
+        <small class="text-white">&copy; 2023 The Docsy Authors All Rights Reserved</small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></small>
 	
 		<p class="mt-2"><a href="/occt-site/about/">About occt.nim</a></p>
@@ -879,7 +878,7 @@ bar := &quot;foo&quot;;
 
 
 
-<script src='/occt-site/js/tabpane-persist.js'></script>
+<script src='/js/tabpane-persist.js'></script>
 
 
 
@@ -897,7 +896,7 @@ bar := &quot;foo&quot;;
 
 
 
-<script src="/occt-site/js/main.min.5bc9aa188f004c02c80bec0abb8ef641bc030e5fb9aad2b35fb2d4917a0b9e66.js" integrity="sha256-W8mqGI8ATALIC&#43;wKu472QbwDDl&#43;5qtKzX7LUkXoLnmY=" crossorigin="anonymous"></script>
+<script src="/occt-site/js/main.min.4323fcbdba12f611a341b8523c3692bcb1190ede33daa6799b5a20aa62c546e5.js" integrity="sha256-QyP8vboS9hGjQbhSPDaSvLEZDt4z2qZ5m1ogqmLFRuU=" crossorigin="anonymous"></script>
 
 
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.89.4" /><link rel="alternate" type="text/html" href="https://mantielero.github.io/occt-site/docs/reference/handles/_print/">
+<meta name="generator" content="Hugo 0.109.0"><link rel="alternate" type="text/html" href="https://mantielero.github.io/occt-site/docs/reference/handles/_print/">
 <link rel="alternate" type="application/rss&#43;xml" href="https://mantielero.github.io/occt-site/docs/reference/handles/index.xml">
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -30,7 +30,6 @@ A detailed explanation on handles is given the Open Cascade documentation: Progr
 <meta property="og:description" content="Open Cascade bindings for Nim language" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://mantielero.github.io/occt-site/docs/reference/handles/" /><meta property="og:site_name" content="occt.nim" />
-
 <meta itemprop="name" content="Handles">
 <meta itemprop="description" content="Open Cascade bindings for Nim language"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Handles"/>
@@ -39,8 +38,8 @@ A detailed explanation on handles is given the Open Cascade documentation: Progr
 
 
 
-<link rel="preload" href="/occt-site/scss/main.min.77ad8086257c5b04aec72128f0eebde3c7c6696b921b68c53e5e0d3f187d0a84.css" as="style">
-<link href="/occt-site/scss/main.min.77ad8086257c5b04aec72128f0eebde3c7c6696b921b68c53e5e0d3f187d0a84.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/occt-site/scss/main.scss" as="style">
+<link href="/occt-site/scss/main.scss" rel="stylesheet" integrity="">
 
 
 <script
@@ -205,7 +204,7 @@ if (!doNotTrack) {
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferencegc-li">
   <a href="/occt-site/docs/reference/gc/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsreferencegc"><span class="">Gc</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-occt-sitedocsreferencehandles-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-occt-sitedocsreferencehandles-li">
   <a href="/occt-site/docs/reference/handles/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsreferencehandles"><span class="td-sidebar-nav-active-item">Handles</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-occt-sitedocsreferencegp-li">
   <a href="/occt-site/docs/reference/gp/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-occt-sitedocsreferencegp"><span class="">Package: gp</span></a>
@@ -413,84 +412,84 @@ if (!doNotTrack) {
 <h1 id="nim">Nim</h1>
 <h2 id="basic-example">Basic example</h2>
 <p>The following code does the following:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
-
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">HandleGeom_CartesianPoint</span>
-
-<span style="color:#000">aPnt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newHandle</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">cnew</span> <span style="color:#000">newGeomCartesianPoint</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.3</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">echo</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">x</span>
-<span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">setY</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.3</span><span style="color:#000;font-weight:bold">)</span>
-
-<span style="color:#000">echo</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span>
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nim" data-lang="nim"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">HandleGeom_CartesianPoint</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">aPnt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newHandle</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">cnew</span> <span style="color:#000">newGeomCartesianPoint</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.3</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">x</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">setY</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.3</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span>
+</span></span></code></pre></div><ol>
 <li>The code <code>var aPnt:HandleGeom_CartesianPoint</code> creates the variable <code>aPnt</code> with type <code>HandleGeom_CartesianPoint</code>. Bear in mind that <code>HandleGeom_CartesianPoint</code> is an alias for: <code>Handle[CartesianPoint]</code>.</li>
 <li>The code <code>cnew newGeomCartesianPoint(0.0,0.0,0.0)</code> creates a <code>ptr Geom_CartesianPoint</code>. This can be automatically converted to <code>HandleGeom_CartesianPoint</code> thanks to a converter defined in <code>standard_handle.nim</code>.</li>
 <li>The code <code>aPnt = newHandle( cnew newGeomCartesianPoint(0.0,0.0,0.0) )</code> creates a <code>HandleGeom_CartesianPoint</code> from the <code>ptr Geom_CartesianPoint</code>.</li>
 <li>The code:
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#000">echo</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">x</span>
-</code></pre></div>is used to show the content of <code>aPnt</code> through the handle. For that purpose, we use the operator <code>*</code> which converts <code>HandleGeom_CartesianPoint</code> into <code>var Geom_CartesianPoint</code>.</li>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nim" data-lang="nim"><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">x</span>
+</span></span></code></pre></div>is used to show the content of <code>aPnt</code> through the handle. For that purpose, we use the operator <code>*</code> which converts <code>HandleGeom_CartesianPoint</code> into <code>var Geom_CartesianPoint</code>.</li>
 <li>The code:
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">setY</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.3</span><span style="color:#000;font-weight:bold">)`</span>
-</code></pre></div>is used for assigment by means of the handle.</li>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nim" data-lang="nim"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPnt</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">setY</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.3</span><span style="color:#000;font-weight:bold">)`</span>
+</span></span></code></pre></div>is used for assigment by means of the handle.</li>
 </ol>
 <p>In the above example, memory is handled by C++ side part of the history.</p>
 <h2 id="one-to-many-example">One to many example</h2>
 <p>The following example shows how two handles point to the same object:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
-
-<span style="color:#8f5902;font-style:italic"># Create the pointer to the object</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPntPtr</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">cnew</span> <span style="color:#000">newGeomCartesianPoint</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.3</span><span style="color:#000;font-weight:bold">)</span> 
-
-<span style="color:#8f5902;font-style:italic"># Create handles for the object</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">aPntHandle2</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">HandleGeom_CartesianPoint</span>
-<span style="color:#000">aPntHandle1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newHandle</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">aPntPtr</span> <span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">aPntHandle2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newHandle</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">aPntPtr</span> <span style="color:#000;font-weight:bold">)</span>
-
-<span style="color:#8f5902;font-style:italic"># We can now access to the same object through different handles</span>
-<span style="color:#000">assert</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle2</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">x</span> 
-<span style="color:#000">assert</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle2</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span>
-<span style="color:#000">assert</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">z</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle2</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">z</span>
-
-<span style="color:#8f5902;font-style:italic"># If we modify something using one handle, the other can see it.</span>
-<span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">setY</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.3</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">assert</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle2</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span>
-<span style="color:#000">echo</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span>
-
-<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;All assertions were true!!&#34;</span>
-</code></pre></div><h2 id="wayforward">Wayforward</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nim" data-lang="nim"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Create the pointer to the object</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPntPtr</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">cnew</span> <span style="color:#000">newGeomCartesianPoint</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.3</span><span style="color:#000;font-weight:bold">)</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Create handles for the object</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">aPntHandle2</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">HandleGeom_CartesianPoint</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">aPntHandle1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newHandle</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">aPntPtr</span> <span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">aPntHandle2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newHandle</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">aPntPtr</span> <span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># We can now access to the same object through different handles</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">assert</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle2</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">x</span> 
+</span></span><span style="display:flex;"><span><span style="color:#000">assert</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle2</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">assert</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">z</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle2</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">z</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># If we modify something using one handle, the other can see it.</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">setY</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.3</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">assert</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle2</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">aPntHandle1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">y</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;All assertions were true!!&#34;</span>
+</span></span></code></pre></div><h2 id="wayforward">Wayforward</h2>
 <p>With a couple of function is very easy to simplify the coding. The first one, creates a constructor for handles. The second one is a converter that enables using the handle as if it were the object itself:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
-
-<span style="color:#204a87;font-weight:bold">proc </span><span style="color:#000">newPointCartesian</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#000">X</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">Y</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">Z</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">SomeNumber</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">X</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">y</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">Y</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">z</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">Z</span><span style="color:#000;font-weight:bold">):</span><span style="color:#000">HandleGeom_CartesianPoint</span> <span style="color:#ce5c00;font-weight:bold">=</span>
-  <span style="color:#000">newHandle</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">cnew</span> <span style="color:#000">newGeomCartesianPoint</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cfloat</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">y</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cfloat</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">z</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cfloat</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">)</span>
-
-<span style="color:#204a87;font-weight:bold">converter</span> <span style="color:#000">toGeom_CartesianPoint</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">tmp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">HandleGeom_CartesianPoint</span><span style="color:#000;font-weight:bold">):</span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">Geom_CartesianPoint</span>  <span style="color:#ce5c00;font-weight:bold">=</span>
-  <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">tmp</span><span style="color:#000;font-weight:bold">)</span>
-
-<span style="color:#8f5902;font-style:italic"># Create the pointer to the object</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPnt2</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">HandleGeom_CartesianPoint</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPointCartesian</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.3</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">echo</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z</span>
-<span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;aPnt is null: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">isNull</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">aPnt2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">isNull</span>
-
-<span style="color:#000">aPnt2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">aPnt1</span>
-<span style="color:#000">echo</span> <span style="color:#000">aPnt2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y</span>
-<span style="color:#000">echo</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y</span>
-
-<span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setY</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">5.5</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">echo</span> <span style="color:#000">aPnt2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y</span>
-<span style="color:#000">echo</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y</span>
-</code></pre></div><h1 id="future-ideas">Future ideas:</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nim" data-lang="nim"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">occt</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">proc </span><span style="color:#000">newPointCartesian</span><span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#000">X</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">Y</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">Z</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">SomeNumber</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">X</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">y</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">Y</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">z</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">Z</span><span style="color:#000;font-weight:bold">):</span><span style="color:#000">HandleGeom_CartesianPoint</span> <span style="color:#ce5c00;font-weight:bold">=</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">newHandle</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">cnew</span> <span style="color:#000">newGeomCartesianPoint</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cfloat</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">y</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cfloat</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">z</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cfloat</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">converter</span> <span style="color:#000">toGeom_CartesianPoint</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">tmp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">HandleGeom_CartesianPoint</span><span style="color:#000;font-weight:bold">):</span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">Geom_CartesianPoint</span>  <span style="color:#ce5c00;font-weight:bold">=</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">`</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">`(</span><span style="color:#000">tmp</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Create the pointer to the object</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPnt2</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">HandleGeom_CartesianPoint</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPointCartesian</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.3</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#4e9a06">&#34;aPnt is null: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">isNull</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34; &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">aPnt2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">isNull</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">aPnt2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">aPnt1</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#000">aPnt2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setY</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">5.5</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#000">aPnt2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">echo</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y</span>
+</span></span></code></pre></div><h1 id="future-ideas">Future ideas:</h1>
 <h2 id="type-conformity">Type conformity</h2>
 <p><a href="https://dev.opencascade.org/doc/overview/html/occt_user_guides__foundation_classes.html#autotoc_md64">https://dev.opencascade.org/doc/overview/html/occt_user_guides__foundation_classes.html#autotoc_md64</a></p>
 <p>This can be implemented by means of something like:</p>
-<pre tabindex="0"><code>converter toGeom_Point*(tmp:HandleGeom_CartesianPoint):HandleGeom_Point  {.importcpp:&quot;(@)&quot;, header:&quot;Geom_Point.hxx&quot;,cdecl.}
+<pre tabindex="0"><code>converter toGeom_Point*(tmp:HandleGeom_CartesianPoint):HandleGeom_Point  {.importcpp:&#34;(@)&#34;, header:&#34;Geom_Point.hxx&#34;,cdecl.}
 </code></pre><p>So that the following works:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">HandleGeom_Point</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPnt2</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">HandleGeom_CartesianPoint</span>
-<span style="color:#000">aPnt2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPointCartesian</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.3</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">aPnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">aPnt2</span>  <span style="color:#8f5902;font-style:italic"># This creates automatic conversion thanks to C++ side type conformity (it would be wrong in Nim). Thanks to the converter.</span>
-</code></pre></div><h1 id="proposal">Proposal</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nim" data-lang="nim"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPnt1</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">HandleGeom_Point</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">aPnt2</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">HandleGeom_CartesianPoint</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">aPnt2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">newPointCartesian</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2.2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.3</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">aPnt1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">aPnt2</span>  <span style="color:#8f5902;font-style:italic"># This creates automatic conversion thanks to C++ side type conformity (it would be wrong in Nim). Thanks to the converter.</span>
+</span></span></code></pre></div><h1 id="proposal">Proposal</h1>
 <ol>
 <li>
 <p>The type used in Nim could be directly the handle.</p>
@@ -580,7 +579,10 @@ if (!doNotTrack) {
 		<br />
 	
 	
-	
+	<div class="text-muted mt-5 pt-3 border-top">
+  Last modified December 12, 2021: <a href="https://github.com/google/docsy-example/commit/449b00140dff9a0f753b49e2ad5efa7245b18e92">CadQuery inspiration (449b001)</a>
+</div>
+
 </div>
 
           </main>
@@ -649,7 +651,7 @@ if (!doNotTrack) {
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 The Docsy Authors All Rights Reserved</small>
+        <small class="text-white">&copy; 2023 The Docsy Authors All Rights Reserved</small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></small>
 	
 		<p class="mt-2"><a href="/occt-site/about/">About occt.nim</a></p>
@@ -668,7 +670,7 @@ if (!doNotTrack) {
 
 
 
-<script src='/occt-site/js/tabpane-persist.js'></script>
+<script src='/js/tabpane-persist.js'></script>
 
 
 
@@ -686,7 +688,7 @@ if (!doNotTrack) {
 
 
 
-<script src="/occt-site/js/main.min.5bc9aa188f004c02c80bec0abb8ef641bc030e5fb9aad2b35fb2d4917a0b9e66.js" integrity="sha256-W8mqGI8ATALIC&#43;wKu472QbwDDl&#43;5qtKzX7LUkXoLnmY=" crossorigin="anonymous"></script>
+<script src="/occt-site/js/main.min.4323fcbdba12f611a341b8523c3692bcb1190ede33daa6799b5a20aa62c546e5.js" integrity="sha256-QyP8vboS9hGjQbhSPDaSvLEZDt4z2qZ5m1ogqmLFRuU=" crossorigin="anonymous"></script>
 
 
 

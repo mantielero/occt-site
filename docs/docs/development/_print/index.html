@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.89.4" /><link rel="canonical" type="text/html" href="https://mantielero.github.io/occt-site/docs/development/">
+<meta name="generator" content="Hugo 0.109.0"><link rel="canonical" type="text/html" href="https://mantielero.github.io/occt-site/docs/development/">
 <link rel="alternate" type="application/rss&#43;xml" href="https://mantielero.github.io/occt-site/docs/development/index.xml">
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -29,7 +29,6 @@
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://mantielero.github.io/occt-site/docs/development/" /><meta property="og:site_name" content="occt.nim" />
-
 <meta itemprop="name" content="Development">
 <meta itemprop="description" content="Shows some notes about the project itself. This migth help others to contribute.
 "><meta name="twitter:card" content="summary"/>
@@ -40,8 +39,8 @@
 
 
 
-<link rel="preload" href="/occt-site/scss/main.min.77ad8086257c5b04aec72128f0eebde3c7c6696b921b68c53e5e0d3f187d0a84.css" as="style">
-<link href="/occt-site/scss/main.min.77ad8086257c5b04aec72128f0eebde3c7c6696b921b68c53e5e0d3f187d0a84.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/occt-site/scss/main.scss" as="style">
+<link href="/occt-site/scss/main.scss" rel="stylesheet" integrity="">
 
 
 <script
@@ -270,23 +269,23 @@ This the multi-page printable view of this section.
 <p>Run the <code>gen.nims</code> until it works. If it fails, you might need to comment lines in the header, by adding something like: <code>genFiles( &quot;filename.hxx&quot;, comment = @[(25, 30)])</code>.</p>
 <p>In order to include all the new files created, just go to the corresponding <em>toolkit</em> file. For example, <code>./experiments/wrapper2/tkgeombase/tkgeombase.nim</code> and include <code>extrema</code> by adding: <code>include extrema/extrema_includes</code></p>
 <p>Check that everything is fine by running for example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ nim cpp ex04_tkmath
-</code></pre></div><p>If an error like <code>inheritance only works with non-final objects</code> appears, it means that the corresponding object needs to be defined as: <code>... = object of RootObj</code>. That modification is done by means of the <code>gen.nims</code> file. By means of something like this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#000">pp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;extrema_ponsurf.nim&#34;</span><span style="color:#000;font-weight:bold">,</span>
-  <span style="color:#000">replaceAll</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">@[</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;bycopy.} = object&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;bycopy.} = object of RootObj&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">)</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nim cpp ex04_tkmath
+</span></span></code></pre></div><p>If an error like <code>inheritance only works with non-final objects</code> appears, it means that the corresponding object needs to be defined as: <code>... = object of RootObj</code>. That modification is done by means of the <code>gen.nims</code> file. By means of something like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nim" data-lang="nim"><span style="display:flex;"><span><span style="color:#000">pp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;extrema_ponsurf.nim&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">replaceAll</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">@[</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;bycopy.} = object&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;bycopy.} = object of RootObj&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><blockquote>
 <p><code>pp</code> stands for Post Processing.</p>
 </blockquote>
 <h3 id="example-standard-packagehttpsdevopencascadeorgdocrefmanhtmlpackage_standardhtml">Example: <a href="https://dev.opencascade.org/doc/refman/html/package_standard.html">Standard package</a></h3>
 <p>There are cases where the bindings will be created without any issue:</p>
 <pre tabindex="0"><code>$ c2nim --cpp --header --strict --out:standard.nim /usr/include/opencascade/Standard.hxx
-/usr/include/opencascade/Standard.hxx(94, 1) Warning: comment ' _Standard_HeaderFile' ignored [CommentXIgnored]
+/usr/include/opencascade/Standard.hxx(94, 1) Warning: comment &#39; _Standard_HeaderFile&#39; ignored [CommentXIgnored]
 Hint: operation successful (94 lines compiled; 1 millisecond, 24 microseconds, and 983 nanoseconds sec total; 3.012MiB; ) [SuccessX]
 </code></pre><p>But this doesn&rsquo;t mean that this is what you want/need. By inspecting the file, we see that there are plenty of <code>Standard_EXPORT</code>, macros that have not been transformed (like <code>DEFINE_STANDARD_ALLOC</code>), &hellip; Besides, we might be interested in the type, but not in the method. So we might need to pre-process or post-process the header.</p>
 <h4 id="dealing-with-macros">Dealing with macros</h4>
 <p>We can find where is defined the <code>DEFINE_STANDARD_ALLOC</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grep <span style="color:#4e9a06">&#34;define DEFINE_STANDARD_ALLOC&#34;</span> /usr/include/opencascade/*.hxx
-</code></pre></div><p>It is defined in <code>Standard_DefineAlloc.hxx</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ grep <span style="color:#4e9a06">&#34;define DEFINE_STANDARD_ALLOC&#34;</span> /usr/include/opencascade/*.hxx
+</span></span></code></pre></div><p>It is defined in <code>Standard_DefineAlloc.hxx</code>.</p>
 <p>We can create a file where we define what we do with the macro. For instance:</p>
 <ul>
 <li>Option 1: we can use exactly the same specification:
@@ -331,8 +330,8 @@ Hint: operation successful (94 lines compiled; 1 millisecond, 24 microseconds, a
 #endif
 </code></pre><h4 id="generate-the-bindings">Generate the bindings</h4>
 <p>In this case, we would execute:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ c2nim --cpp --header --strict --out:standard.nim occt.c2nim /usr/include/opencascade/Standard.hxx
-</code></pre></div><p>and we will get a better binding.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ c2nim --cpp --header --strict --out:standard.nim occt.c2nim /usr/include/opencascade/Standard.hxx
+</span></span></code></pre></div><p>and we will get a better binding.</p>
 <p>And so on with: <code>Standard_Size</code>, `Standard_Address``.</p>
 <h2 id="how-to-add-a-new-package">How to add a new package?</h2>
 <ol>
@@ -344,47 +343,47 @@ Hint: operation successful (94 lines compiled; 1 millisecond, 24 microseconds, a
 </code></pre><ol start="4">
 <li>We will have something like this:</li>
 </ol>
-<pre tabindex="0"><code>genFiles(&quot;gp_Ax1&quot;)
-genFiles(&quot;gp_Ax22d&quot;)
-genFiles(&quot;gp_Ax2d&quot;)
-genFiles(&quot;gp_Ax2&quot;)
+<pre tabindex="0"><code>genFiles(&#34;gp_Ax1&#34;)
+genFiles(&#34;gp_Ax22d&#34;)
+genFiles(&#34;gp_Ax2d&#34;)
+genFiles(&#34;gp_Ax2&#34;)
 ...
 </code></pre><ol start="5">
 <li>Modify the beginning of the file.</li>
 </ol>
-<pre tabindex="0"><code>let c2nimFile = &quot;gp.c2nim&quot;
+<pre tabindex="0"><code>let c2nimFile = &#34;gp.c2nim&#34;
 </code></pre><ol start="6">
 <li>Adjust the last block which creates file including all the binding files:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">txt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">files</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">listFiles</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;./&#34;</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">files</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">sort</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">path</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#000">files</span><span style="color:#000;font-weight:bold">:</span>
-  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dir</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">name</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ext</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">splitFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">)</span>
-
-  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">ext</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#4e9a06">&#34;.nim&#34;</span> <span style="color:#204a87;font-weight:bold">and</span> <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#4e9a06">&#34;gen&#34;</span> <span style="color:#204a87;font-weight:bold">and</span> <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#4e9a06">&#34;gp_includes&#34;</span><span style="color:#000;font-weight:bold">:</span>
-    <span style="color:#000">txt</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;include &#34;</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#4e9a06">&#34;</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span>
-    <span style="color:#8f5902;font-style:italic">#exp &amp;= name &amp; &#34;, &#34;</span>
-  <span style="color:#8f5902;font-style:italic">#txt &amp;= exp</span>
-
-
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;{.passL:</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">-lTKMath</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">.}</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span>
-<span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;{.passC:</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">-I&#34;</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">lib</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#4e9a06">&#34;</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> .}</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span>
-<span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;{.experimental: </span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">codeReordering</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">.}</span><span style="color:#4e9a06">\n\n</span><span style="color:#4e9a06">&#34;</span>
-<span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;&#34;&#34;
-</span><span style="color:#4e9a06">when defined(windows):
-</span><span style="color:#4e9a06">  const tkernel* = &#34;TKMath.dll&#34;
-</span><span style="color:#4e9a06">elif defined(macosx):
-</span><span style="color:#4e9a06">  const tkernel* = &#34;libTKMath.dylib&#34;
-</span><span style="color:#4e9a06">else:
-</span><span style="color:#4e9a06">  const tkernel* = &#34;libTKMath.so&#34; 
-</span><span style="color:#4e9a06">
-</span><span style="color:#4e9a06">
-</span><span style="color:#4e9a06">&#34;&#34;&#34;</span>
-
-<span style="color:#000">writeFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;gp_includes.nim&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">txt</span> <span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">pp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;gp_includes.nim&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</code></pre></div><ol start="7">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nim" data-lang="nim"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">txt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">files</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">listFiles</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;./&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">files</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">sort</span><span style="color:#000;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">path</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#000">files</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dir</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">name</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ext</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">splitFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">ext</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#4e9a06">&#34;.nim&#34;</span> <span style="color:#204a87;font-weight:bold">and</span> <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#4e9a06">&#34;gen&#34;</span> <span style="color:#204a87;font-weight:bold">and</span> <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#4e9a06">&#34;gp_includes&#34;</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">txt</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;include &#34;</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#4e9a06">&#34;</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8f5902;font-style:italic">#exp &amp;= name &amp; &#34;, &#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">#txt &amp;= exp</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;{.passL:</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">-lTKMath</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">.}</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;{.passC:</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">-I&#34;</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">lib</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#4e9a06">&#34;</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> .}</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;{.experimental: </span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">codeReordering</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">.}</span><span style="color:#4e9a06">\n\n</span><span style="color:#4e9a06">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#4e9a06">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">when defined(windows):
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">  const tkernel* = &#34;TKMath.dll&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">elif defined(macosx):
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">  const tkernel* = &#34;libTKMath.dylib&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">else:
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">  const tkernel* = &#34;libTKMath.so&#34; 
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">writeFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;gp_includes.nim&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">beggining</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">txt</span> <span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">pp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;gp_includes.nim&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><ol start="7">
 <li>Start executing <code>gen.nims</code> until it fully works. You will have to:</li>
 </ol>
 <p>a. Modify the <code>.c2nim</code> file
@@ -613,7 +612,7 @@ from OCCT.TopoDS import TopoDS_Shape
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 The Docsy Authors All Rights Reserved</small>
+        <small class="text-white">&copy; 2023 The Docsy Authors All Rights Reserved</small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></small>
 	
 		<p class="mt-2"><a href="/occt-site/about/">About occt.nim</a></p>
@@ -632,7 +631,7 @@ from OCCT.TopoDS import TopoDS_Shape
 
 
 
-<script src='/occt-site/js/tabpane-persist.js'></script>
+<script src='/js/tabpane-persist.js'></script>
 
 
 
@@ -650,7 +649,7 @@ from OCCT.TopoDS import TopoDS_Shape
 
 
 
-<script src="/occt-site/js/main.min.5bc9aa188f004c02c80bec0abb8ef641bc030e5fb9aad2b35fb2d4917a0b9e66.js" integrity="sha256-W8mqGI8ATALIC&#43;wKu472QbwDDl&#43;5qtKzX7LUkXoLnmY=" crossorigin="anonymous"></script>
+<script src="/occt-site/js/main.min.4323fcbdba12f611a341b8523c3692bcb1190ede33daa6799b5a20aa62c546e5.js" integrity="sha256-QyP8vboS9hGjQbhSPDaSvLEZDt4z2qZ5m1ogqmLFRuU=" crossorigin="anonymous"></script>
 
 
 

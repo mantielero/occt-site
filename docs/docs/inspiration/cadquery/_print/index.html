@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.89.4" /><link rel="canonical" type="text/html" href="https://mantielero.github.io/occt-site/docs/inspiration/cadquery/">
+<meta name="generator" content="Hugo 0.109.0"><link rel="canonical" type="text/html" href="https://mantielero.github.io/occt-site/docs/inspiration/cadquery/">
 <link rel="alternate" type="application/rss&#43;xml" href="https://mantielero.github.io/occt-site/docs/inspiration/cadquery/index.xml">
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -31,7 +31,6 @@ In Nim …">
 <meta property="og:description" content="Open Cascade bindings for Nim language" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://mantielero.github.io/occt-site/docs/inspiration/cadquery/" /><meta property="og:site_name" content="occt.nim" />
-
 <meta itemprop="name" content="Cadquery">
 <meta itemprop="description" content="Open Cascade bindings for Nim language"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cadquery"/>
@@ -40,8 +39,8 @@ In Nim …">
 
 
 
-<link rel="preload" href="/occt-site/scss/main.min.77ad8086257c5b04aec72128f0eebde3c7c6696b921b68c53e5e0d3f187d0a84.css" as="style">
-<link href="/occt-site/scss/main.min.77ad8086257c5b04aec72128f0eebde3c7c6696b921b68c53e5e0d3f187d0a84.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/occt-site/scss/main.scss" as="style">
+<link href="/occt-site/scss/main.scss" rel="stylesheet" integrity="">
 
 
 <script
@@ -188,11 +187,19 @@ This the multi-page printable view of this section.
 <p>Workplanes are defined within <a href="https://github.com/CadQuery/cadquery/blob/84edaf5d76eb1968137a2337e1008539838cd0e3/cadquery/cq.py#L134">cq.py</a>. An explanation of the concept is given <a href="https://cadquery.readthedocs.io/en/latest/primer.html?highlight=workplane#workplane-class">here</a>.</p>
 <p>Workplanes have a center and a coordenate system.</p>
 <p>In Nim we could do with:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nim" data-lang="nim"><span style="color:#204a87;font-weight:bold">type</span>
-  <span style="color:#000">Workplane</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">object</span>
-    <span style="color:#000">center</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">Pnt</span>
-    <span style="color:#000">cs</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">Ax2</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nim" data-lang="nim"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">type</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">Workplane</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">object</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">cs</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">Ax2</span>  <span style="color:#8f5902;font-style:italic"># Coordinate system</span>
+</span></span></code></pre></div><p>In cadquery, the Workplane contains:</p>
+<ul>
+<li><code>objects: List[CQObject]</code></li>
+<li><code>ctx: CQContext</code></li>
+<li><code>parent: Optional[&quot;Workplane&quot;]</code></li>
+<li><code>plane: Plane</code></li>
+<li><code>_tag: Optional[str]</code></li>
+</ul>
+<p>In the workplane, we work in 2d. CadQuery support <a href="https://cadquery.readthedocs.io/en/latest/apireference.html#doperations">this 2d operations</a>.</p>
+
 </div>
 </div>
 
@@ -275,7 +282,7 @@ This the multi-page printable view of this section.
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 The Docsy Authors All Rights Reserved</small>
+        <small class="text-white">&copy; 2023 The Docsy Authors All Rights Reserved</small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></small>
 	
 		<p class="mt-2"><a href="/occt-site/about/">About occt.nim</a></p>
@@ -294,7 +301,7 @@ This the multi-page printable view of this section.
 
 
 
-<script src='/occt-site/js/tabpane-persist.js'></script>
+<script src='/js/tabpane-persist.js'></script>
 
 
 
@@ -312,7 +319,7 @@ This the multi-page printable view of this section.
 
 
 
-<script src="/occt-site/js/main.min.5bc9aa188f004c02c80bec0abb8ef641bc030e5fb9aad2b35fb2d4917a0b9e66.js" integrity="sha256-W8mqGI8ATALIC&#43;wKu472QbwDDl&#43;5qtKzX7LUkXoLnmY=" crossorigin="anonymous"></script>
+<script src="/occt-site/js/main.min.4323fcbdba12f611a341b8523c3692bcb1190ede33daa6799b5a20aa62c546e5.js" integrity="sha256-QyP8vboS9hGjQbhSPDaSvLEZDt4z2qZ5m1ogqmLFRuU=" crossorigin="anonymous"></script>
 
 
 
